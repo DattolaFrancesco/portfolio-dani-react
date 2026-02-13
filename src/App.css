@@ -234,7 +234,7 @@ li {
   .bg-custom::before {
     content: "";
     top: 2%;
-    background-image: url("../img/Orizzontale_Senza.png");
+    background-image: url("/imgLanding/Orizzontale_Senza.png");
     background-position: center;
     background-size: contain;
 
