@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 const Works = () => {
   const works01 = [
     "/img-works01/1_QUEIO.png",
@@ -35,6 +38,18 @@ const Works = () => {
     "cose a casonfjnfanfnaf fdsfsjdf fdsfjds.",
   ];
   let counter = 0;
+  const location = useLocation();
+  const getWork = () => {
+    let loc = location.hash;
+    const id = loc.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  useEffect(() => {
+    getWork();
+  }, []);
   return (
     <>
       {works.map((e, i) => {
