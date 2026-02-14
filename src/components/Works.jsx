@@ -25,7 +25,8 @@ const Works = () => {
   const works03 = ["/img-works03/1_LETTERING.png", "/img-works03/2_LETTERING.png"];
   const works04 = ["/img-works04/1_VETRINA.JPG", "/img-works04/2_VETRINA.JPG", "/img-works04/3_VETRINA.JPG", "/img-works04/4_VETRINA.JPG"];
   const works05 = ["/img-works05/1_POPUP.png", "/img-works05/2_POPUP.png", "/img-works05/3_POPUP.png", "/img-works05/4_POPUP.png"];
-  const works = [works01, works02, works03, works04, works05];
+  const works06 = ["/img-works06/1_MISC.png", "/img-works06/2_MISC.png", "/img-works06/3_MISC.png", "/img-works06/4_MISC.png", "/img-works06/5_MISC.png"];
+  const works = [works01, works02, works03, works04, works05, works06];
   const tagRelocation = ["01Queio", "02Character", "03Lettering", "04Vetrina", "05Popup", "06Misc"];
   const titles = ["QUEIO", "CHARACTER", "Lettering", "Vetrina", "Popup", "Misc"];
   const h2S = ["QUEIO", "CHARACTER DESIGN", "LETTERING", "WINDOW DISPLAYS", "POP-UP", "MISC"];
@@ -40,16 +41,19 @@ const Works = () => {
   let counter = 0;
   const location = useLocation();
   const getWork = () => {
-    let loc = location.hash;
-    const id = loc.replace("#", "");
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      let loc = location.hash;
+      const id = loc.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 500);
   };
   useEffect(() => {
     getWork();
-  }, []);
+  }, [location]);
   return (
     <>
       {works.map((e, i) => {
@@ -57,22 +61,22 @@ const Works = () => {
         return (
           <>
             <div key={i}>
-              <section className="interval" id={tagRelocation[counter - 1]}></section>
-              <section>
+              <section className="interval" id={tagRelocation[i]}></section>
+              <section className={i === 5 ? "mb-5" : ""}>
                 <div className="container">
                   <section className="mt-5">
-                    <h2 className="fs-custom-works fw-semibold">{h2S[counter - 1]}</h2>
-                    <p className="fs-7">{descriptions[counter - 1]}</p>
+                    <h2 className="fs-custom-works fw-semibold">{h2S[i]}</h2>
+                    <p className="fs-7">{descriptions[i]}</p>
                   </section>
                 </div>
-                <div id={titles[counter - 1]} className="carousel slide">
+                <div id={titles[i]} className="carousel slide">
                   <div className="carousel-indicators">
                     {e.map((e, i) => {
                       return (
                         <button
                           key={i}
                           type="button"
-                          data-bs-target={titles[counter - 1]}
+                          data-bs-target={`#${titles[counter - 1]}`}
                           data-bs-slide-to={i}
                           className="active"
                           aria-current="true"
@@ -81,7 +85,7 @@ const Works = () => {
                       );
                     })}
                   </div>
-                  <div className={`carousel-inner ${counter === 2 ? "" : "shadow-custom"}`}>
+                  <div className={`carousel-inner ${i === 1 ? "" : "shadow-custom"}`}>
                     {e.map((e, i) => {
                       return (
                         <div className={`carousel-item ${i === 0 ? "active" : ""}`} key={i}>
@@ -90,11 +94,11 @@ const Works = () => {
                       );
                     })}
                   </div>
-                  <button className="carousel-control-prev" type="button" data-bs-target={`#${titles[counter - 1]}`} data-bs-slide="prev">
+                  <button className="carousel-control-prev" type="button" data-bs-target={`#${titles[i]}`} data-bs-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Previous</span>
                   </button>
-                  <button className="carousel-control-next" type="button" data-bs-target={`#${titles[counter - 1]}`} data-bs-slide="next">
+                  <button className="carousel-control-next" type="button" data-bs-target={`#${titles[i]}`} data-bs-slide="next">
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                   </button>
