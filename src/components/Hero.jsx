@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section id="hero" className="bg-custom position-relative overflow-hidden">
+    <section id="hero" className="bg-custom position-relative overflow-hidden showOrNot">
       <div className="marquee">
         <div className="marquee-track">
           <h1>ILLUSTRATOR AND GRAPHIC AND</h1>

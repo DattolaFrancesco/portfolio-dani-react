@@ -1,4 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap");
 /* body */
+
 html,
 body {
   touch-action: manipulation;
@@ -46,8 +48,8 @@ img {
 }
 
 /* // header nav bar logo */
-nav .logo img {
-  height: clamp(40px, 5vw, 70px);
+.logo img {
+  height: clamp(60px, 5vw, 70px);
 }
 
 /* //  section hero */
@@ -372,7 +374,8 @@ li {
 }
 .fw-custom {
   font-weight: 500;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  font-family: "Gravitas One", serif;
 }
 .vh-custom-info {
   min-height: 100dvh;
@@ -408,4 +411,7 @@ li {
 }
 .selector {
   background-color: red;
+}
+.w-max-content {
+  width: max-content;
 }

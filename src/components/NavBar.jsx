@@ -7,29 +7,29 @@ const NavBar = () => {
   const navigate = useNavigate();
   console.log(location.pathname);
   return (
-    <Navbar className="position-fixed top-0 w-100 p-2" style={{ zIndex: 99999 }}>
-      <div className="d-flex justify-content-between   animationNav w-100">
-        <Navbar.Brand
+    <>
+      <div className="animationNav d-flex justify-content-between align-items-center mt-2 position-fixed top-0 w-100" style={{ zIndex: "9999" }}>
+        <a
           className="logo"
           onClick={() => {
             navigate("/");
           }}
         >
           <img src="/imgLanding/Cuore.png" alt="" />
-        </Navbar.Brand>
-        <Nav className="list-unstyled d-flex align-items-center mb-0 bg-glass rounded-pill px-2 ">
+        </a>
+        <div className="list-unstyled d-flex align-items-center mb-0 bg-glass rounded-pill px-2 w-max-content gap-3 py-2 px-2">
           <Link
             to={location.pathname === "/works" ? "/#game-boy" : "/works"}
-            className={`nav-link rounded-pill ${location.pathname === "/works" ? " selector" : ""}`}
+            className={`nav-link fw-bold px-2 rounded-pill ${location.pathname === "/works" ? " selector" : ""}`}
           >
             {location.pathname === "/works" ? "GAMEBOY" : "WORKS"}
           </Link>
-          <Link to={"/info"} className={`nav-link rounded-pill ${location.pathname === "/info" ? " selector" : ""}`}>
+          <Link to={"/info"} className={`nav-link rounded-pill px-2 fw-bold ${location.pathname === "/info" ? " selector" : ""}`}>
             INFO
           </Link>
-        </Nav>
+        </div>
       </div>
-    </Navbar>
+    </>
   );
 };
 export default NavBar;

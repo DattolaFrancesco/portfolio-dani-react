@@ -25,7 +25,7 @@ const Works = () => {
   const works03 = ["/img-works03/1_LETTERING.png", "/img-works03/2_LETTERING.png"];
   const works04 = ["/img-works04/1_VETRINA.JPG", "/img-works04/2_VETRINA.JPG", "/img-works04/3_VETRINA.JPG", "/img-works04/4_VETRINA.JPG"];
   const works05 = ["/img-works05/1_POPUP.png", "/img-works05/2_POPUP.png", "/img-works05/3_POPUP.png", "/img-works05/4_POPUP.png"];
-  const works06 = ["/img-works06/1_MISC.png", "/img-works06/2_MISC.png", "/img-works06/3_MISC.png", "/img-works06/4_MISC.png", "/img-works06/5_MISC.png"];
+  const works06 = ["/img-works06/1_MISC.png", "/img-works06/2_MISC.png", "/img-works06/3_MISC.png", "/img-works06/4_MISC.png"];
   const works = [works01, works02, works03, works04, works05, works06];
   const tagRelocation = ["01Queio", "02Character", "03Lettering", "04Vetrina", "05Popup", "06Misc"];
   const titles = ["QUEIO", "CHARACTER", "Lettering", "Vetrina", "Popup", "Misc"];
