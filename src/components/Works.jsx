@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import * as bootstrap from "bootstrap";
 
 const Works = () => {
   const works01 = [
@@ -54,58 +55,52 @@ const Works = () => {
   useEffect(() => {
     getWork();
   }, [location]);
+  useEffect(() => {
+    const carousels = document.querySelectorAll(".carousel");
+    carousels.forEach((c) => new bootstrap.Carousel(c, { touch: true }));
+  }, []);
   return (
     <>
       {works.map((e, i) => {
         counter++;
         return (
-          <>
-            <div key={i}>
-              <section className="interval" id={tagRelocation[i]}></section>
-              <section className={i === 5 ? "mb-5" : ""}>
-                <div className="container">
-                  <section className="mt-5">
-                    <h2 className="fs-custom-works fw-semibold">{h2S[i]}</h2>
-                    <p className="fs-7">{descriptions[i]}</p>
-                  </section>
+          <div key={i}>
+            <section className="interval" id={tagRelocation[i]}></section>
+            <section className={i === 5 ? "mb-5" : ""}>
+              <div className="container">
+                <section className="mt-5">
+                  <h2 className="fs-custom-works fw-semibold">{h2S[i]}</h2>
+                  <p className="fs-7">{descriptions[i]}</p>
+                </section>
+              </div>
+              <div id={titles[i]} className="carousel slide">
+                <div className="carousel-indicators">
+                  {e.map((e, i) => {
+                    return (
+                      <button
+                        key={i}
+                        type="button"
+                        data-bs-target={`#${titles[counter - 1]}`}
+                        data-bs-slide-to={i}
+                        className="active"
+                        aria-current="true"
+                        aria-label={`Slide ${i + 1}`}
+                      ></button>
+                    );
+                  })}
                 </div>
-                <div id={titles[i]} className="carousel slide">
-                  <div className="carousel-indicators">
-                    {e.map((e, i) => {
-                      return (
-                        <button
-                          key={i}
-                          type="button"
-                          data-bs-target={`#${titles[counter - 1]}`}
-                          data-bs-slide-to={i}
-                          className="active"
-                          aria-current="true"
-                          aria-label={`Slide ${i + 1}`}
-                        ></button>
-                      );
-                    })}
-                  </div>
-                  <div className={`carousel-inner ${i === 1 ? "" : "shadow-custom"}`}>
-                    {e.map((e, i) => {
-                      return (
-                        <div className={`carousel-item ${i === 0 ? "active" : ""}`} key={i}>
-                          <img src={e} className="d-block w-100" alt="queio works" />
-                        </div>
-                      );
-                    })}
-                  </div>
-                  <button className="carousel-control-prev" type="button" data-bs-target={`#${titles[i]}`} data-bs-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Previous</span>
-                  </button>
-                  <button className="carousel-control-next" type="button" data-bs-target={`#${titles[i]}`} data-bs-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="visually-hidden">Next</span>
-                  </button>
+                <div className={`carousel-inner ${i === 1 ? "" : "shadow-custom"}`}>
+                  {e.map((e, i) => {
+                    return (
+                      <div className={`carousel-item ${i === 0 ? "active" : ""}`} key={i}>
+                        <img src={e} className="d-block w-100" alt="queio works" />
+                      </div>
+                    );
+                  })}
                 </div>
-              </section>
-            </div>
-          </>
+              </div>
+            </section>
+          </div>
         );
       })}
     </>

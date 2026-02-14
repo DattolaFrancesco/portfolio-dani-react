@@ -1,27 +1,30 @@
+import { Col, Row } from "react-bootstrap";
+
 const Info = () => {
   return (
     <>
       <div className="d-flex justify-content-center align-items-center vh-custom-info">
-        <section className="d-flex justify-content-center align-items-center flex-column">
-          <ul className="list-unstyled text-black text-center custom-m fs-1 moveUl d-flex flex-column mb-0 gap-custom">
-            <li className="mb-2 fw-custom">
-              <span>DANIELE PIACENTILE</span>
-            </li>
-            <li className="mb-2 fw-custom">
-              <span>ELSOLITOO10@GMAIL.COM</span>
-            </li>
-            <li className="mb-2 fw-custom">
+        <section>
+          <Row className="mx-2 gap-custom-info">
+            <Col xs={12} className="fs-5 lh-sm fw-normal w-max-content moveUl">
+              <h1 className="mb-4 display-4 fw-custom-info lh-1">
+                DANIELE
+                <br /> <span className="underline position-relative">PIACENTILE</span>
+              </h1>
               <a href="tel:+393519804290" className="phone-link">
-                <span>+39 351 980 4290</span>
+                <p className="m-0">+39 351 980 4290</p>
               </a>
-            </li>
-            <a href="https://www.instagram.com/_.elsolito._?igsh=czZwYzB0NTNxaWtp&utm_source=qr" className="text-black text-decoration-none">
-              <li className="mb-2 fw-custom lastLi">
-                <span>INSTAGRAM ACCOUNT</span>
-              </li>
-            </a>
-          </ul>
-          <img src="imgLanding/TELEFONOWEBMOBILE.png" alt="" className="w-75 mh-custom moveImg" />
+              <a href="mailto:ELSOLITOO10@GMAIL.COM" className="text-black text-decoration-none">
+                <p className="m-0">ELSOLITOO10@GMAIL.COM</p>
+              </a>
+              <a href="https://www.instagram.com/_.elsolito._?igsh=czZwYzB0NTNxaWtp&utm_source=qr" className="text-black text-decoration-none">
+                <p className="m-0">INSTAGRAM ACCOUNT</p>
+              </a>
+            </Col>
+            <Col xs={12} className="d-flex justify-content-end moveImg">
+              <img src="/imgLanding/TELEFONOWEBMOBILE.png" alt="" className="w-custom-info-cell" />
+            </Col>
+          </Row>
         </section>
         <div className="marquee d-none">
           <div className="marquee-track">

@@ -1,5 +1,3 @@
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
@@ -8,7 +6,10 @@ const NavBar = () => {
   console.log(location.pathname);
   return (
     <>
-      <div className="animationNav d-flex justify-content-between align-items-center mt-2 position-fixed top-0 w-100" style={{ zIndex: "9999" }}>
+      <div
+        className={`animationNav d-flex justify-content-between align-items-center mt-2 ${location.pathname === "/info" ? " position-sticky " : " position-fixed "}top-0 w-100`}
+        style={{ zIndex: "9999" }}
+      >
         <a
           className="logo"
           onClick={() => {
