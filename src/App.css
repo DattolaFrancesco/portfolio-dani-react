@@ -436,7 +436,7 @@ li {
   rotate: 270deg;
   opacity: 0;
   position: absolute;
-  right: -12%;
+  right: 0;
   bottom: 30%;
   margin: 0;
   animation: moveP 3s infinite;
@@ -461,4 +461,41 @@ li {
 }
 .w-custom-info-cell {
   width: 65%;
+}
+.custom-tv-size {
+  top: 9%;
+  left: 8%;
+  width: 66%;
+  height: 80%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+#btn-tv-up {
+  right: 8.7%;
+  top: 36%;
+  width: 6%;
+  height: 9%;
+}
+#btn-tv-down {
+  right: 8.7%;
+  top: 51.5%;
+  width: 6%;
+  height: 9%;
+}
+.w-custom-tv-works {
+  width: 50%;
+}
+/* desktop */
+
+@media screen and (min-width: 992px) {
+  .w-custom-info-cell {
+    width: 35%;
+  }
+  .gap-custom-info {
+    gap: 0;
+  }
+  #info-cont .align-items-center {
+    align-items: end;
+  }
 }

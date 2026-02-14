@@ -3,7 +3,7 @@ import { Col, Row } from "react-bootstrap";
 const Info = () => {
   return (
     <>
-      <div className="d-flex justify-content-center align-items-center vh-custom-info">
+      <div id="info-cont" className="d-flex align-items-center vh-custom-info">
         <section>
           <Row className="mx-2 gap-custom-info">
             <Col xs={12} className="fs-5 lh-sm fw-normal w-max-content moveUl">
@@ -21,7 +21,7 @@ const Info = () => {
                 <p className="m-0">INSTAGRAM ACCOUNT</p>
               </a>
             </Col>
-            <Col xs={12} className="d-flex justify-content-end moveImg">
+            <Col xs={12} className="d-flex justify-content-end moveImg" style={{ zIndex: "999" }}>
               <img src="/imgLanding/TELEFONOWEBMOBILE.png" alt="" className="w-custom-info-cell" />
             </Col>
           </Row>
