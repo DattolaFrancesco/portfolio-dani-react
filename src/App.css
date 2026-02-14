@@ -406,3 +406,6 @@ li {
 .none {
   display: none;
 }
+.selector {
+  background-color: red;
+}

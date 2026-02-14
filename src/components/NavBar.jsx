@@ -4,8 +4,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const location = useLocation();
-  console.log(location.pathname);
   const navigate = useNavigate();
+  console.log(location.pathname);
   return (
     <Navbar className="position-fixed top-0 w-100 p-2" style={{ zIndex: 99999 }}>
       <div className="d-flex justify-content-between   animationNav w-100">
@@ -18,10 +18,13 @@ const NavBar = () => {
           <img src="/imgLanding/Cuore.png" alt="" />
         </Navbar.Brand>
         <Nav className="list-unstyled d-flex align-items-center mb-0 bg-glass rounded-pill px-2 ">
-          <Link to={"/works"} className="nav-link">
+          <Link
+            to={location.pathname === "/works" ? "/#game-boy" : "/works"}
+            className={`nav-link rounded-pill ${location.pathname === "/works" ? " selector" : ""}`}
+          >
             {location.pathname === "/works" ? "GAMEBOY" : "WORKS"}
           </Link>
-          <Link to={"/info"} className="nav-link">
+          <Link to={"/info"} className={`nav-link rounded-pill ${location.pathname === "/info" ? " selector" : ""}`}>
             INFO
           </Link>
         </Nav>

@@ -1,81 +1,84 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const GameBoy = () => {
+  const location = useLocation();
+  console.log(location.hash);
   const navigate = useNavigate();
   const images = [
-    "imgLanding/1_Queio.png",
-    "imgLanding/2_character.png",
-    "imgLanding/4_LETTERING.png",
-    "imgLanding/3_Vetrina.png",
-    "imgLanding/2_Popup.png",
-    "imgLanding/6_Misc.png",
+    "imgLanding/1_QUEIO.png",
+    "imgLanding/2_CHARACTER.png",
+    "imgLanding/3_LETTERING.png",
+    "imgLanding/4_Vetrina.png",
+    "imgLanding/5_POPUP.png",
+    "imgLanding/6_MISC.png",
   ];
-  console.log(images[0]);
+  const tagRelocation = ["01Queio", "02Character", "03Lettering", "04Vetrina", "05Popup", "06Misc"];
+  const blur = new Image();
+  blur.src = "imgLanding/blur.gif";
+  const btnUpRef = useRef(null);
+  const btnDownRef = useRef(null);
+  const btnPushRef = useRef(null);
   const [image, setImage] = useState(images[0]);
   const [counter, setCounter] = useState(0);
+  const isloading = useRef(false);
+  const redirect = () => {
+    const hash = location.hash;
+    if (hash) {
+      const id = hash.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      scrollTo(0, 0);
+    }
+  };
   const counterControll = () => {
     if (counter > 5) setCounter(0);
     else if (counter < 0) setCounter(5);
   };
   const changeImg = (n) => {
-    switch (n) {
-      case 0:
-        setImage(images[0]);
-        break;
-      case 1:
-        setImage(images[1]);
-        break;
-      case 2:
-        setImage(images[2]);
-        break;
-      case 3:
-        setImage(images[3]);
-        break;
-      case 4:
-        setImage(images[4]);
-        break;
-      case 5:
-        setImage(images[5]);
-        break;
-    }
+    setImage("imgLanding/blur.gif");
+    setTimeout(() => {
+      setImage(images[n]);
+      isloading.current = false;
+    }, 300);
   };
   const pushWork = (n) => {
-    switch (n) {
-      case 0:
-        navigate("/works#01Queio");
-        break;
-      case 1:
-        navigate("/works#02Character");
-        break;
-      case 2:
-        navigate("/works#03Lettering");
-        break;
-      case 3:
-        navigate("/works#04Vetrina");
-        break;
-      case 4:
-        navigate("/works#05Popup");
-        break;
-      case 5:
-        navigate("/works#06Misc");
-        break;
-    }
+    navigate(`/works#${tagRelocation[n]}`);
   };
   useEffect(() => {
     console.log(" effect");
     counterControll();
     changeImg(counter);
   }, [counter]);
+  useEffect(() => {
+    redirect();
+  }, [location]);
   return (
     <section id="game-boy" className="position-relative">
       <img id="worksDisplayer" src="imgLanding/GAMEBOYOFFICIAL.png" alt="" className="size-custom" />
       <img id="worksPhoto" src={image} alt="" className="position-absolute custom-gameboy-size" />
       <a
         onClick={(e) => {
-          e.preventDefault();
-          console.log(counter);
-          setCounter((prev) => prev + 1);
+          console.log(isloading.current);
+          if (!isloading.current) {
+            isloading.current = true;
+            e.preventDefault();
+            console.log(counter);
+            setCounter((prev) => prev + 1);
+          }
+        }}
+        ref={btnUpRef}
+        onTouchStart={() => {
+          btnUpRef.current.classList.add("custom-positionUp-touched");
+        }}
+        onTouchEnd={() => {
+          btnUpRef.current.classList.remove("custom-positionUp-touched");
+        }}
+        onTouchCancel={() => {
+          btnUpRef.current.classList.remove("custom-positionUp-touched");
         }}
         id="btnUp"
         className="custom-positionUp position-absolute"
@@ -84,9 +87,22 @@ const GameBoy = () => {
       </a>
       <a
         onClick={(e) => {
-          e.preventDefault();
-          console.log(counter);
-          setCounter((prev) => prev - 1);
+          if (!isloading.current) {
+            isloading.current = true;
+            e.preventDefault();
+            console.log(counter);
+            setCounter((prev) => prev - 1);
+          }
+        }}
+        ref={btnDownRef}
+        onTouchStart={() => {
+          (btnDownRef.current.classList.add("custom-positionDown-touched"), { passive: true });
+        }}
+        onTouchEnd={() => {
+          (btnDownRef.current.classList.remove("custom-positionDown-touched"), { passive: true });
+        }}
+        onTouchCancel={() => {
+          (btnDownRef.current.classList.remove("custom-positionDown-touched"), { passive: true });
         }}
         id="btnDown"
         className="position-absolute custom-positionDown"
@@ -97,6 +113,16 @@ const GameBoy = () => {
         onClick={(e) => {
           e.preventDefault();
           pushWork(counter);
+        }}
+        ref={btnPushRef}
+        onTouchStart={() => {
+          (btnPushRef.current.classList.add("custom-push-touched"), { passive: true });
+        }}
+        onTouchEnd={() => {
+          (btnPushRef.current.classList.remove("custom-push-touched"), { passive: true });
+        }}
+        onTouchCancel={() => {
+          (btnPushRef.current.classList.remove("custom-push-touched"), { passive: true });
         }}
         id="btnPush"
         className="position-absolute custom-push"

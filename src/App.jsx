@@ -7,6 +7,7 @@ import LandingPage from "./components/LandingPage";
 import Info from "./components/info";
 import Works from "./components/Works";
 import { useEffect } from "react";
+import Landingscaping from "./components/Landscaping";
 
 function App() {
   const works01 = [
@@ -44,14 +45,17 @@ function App() {
   return (
     <BrowserRouter>
       <div>
+        <Landingscaping />
         <header>
           <NavBar />
         </header>
-        <Routes>
-          <Route path={"/"} element={<LandingPage />} />
-          <Route path={"/info"} element={<Info />} />
-          <Route path={"/works"} element={<Works />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route path={"/"} element={<LandingPage />} />
+            <Route path={"/info"} element={<Info />} />
+            <Route path={"/works"} element={<Works />} />
+          </Routes>
+        </main>
       </div>
     </BrowserRouter>
   );
