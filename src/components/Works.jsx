@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import * as bootstrap from "bootstrap";
 
 const Works = () => {
@@ -59,6 +59,15 @@ const Works = () => {
     const carousels = document.querySelectorAll(".carousel");
     carousels.forEach((c) => new bootstrap.Carousel(c, { touch: true }));
   }, []);
+  const navigate = useNavigate();
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    if (width > 576) navigate("/WorksTV");
+    const handleResize = () => setWidth(window.innerWidth);
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [width]);
   return (
     <>
       {works.map((e, i) => {

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 const NavBar = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location.pathname);
+
   const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);

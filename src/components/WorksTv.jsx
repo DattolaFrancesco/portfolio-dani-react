@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const WorksTv = () => {
   const works = [
@@ -9,10 +10,16 @@ const WorksTv = () => {
     "img-works05/1_POPUP.png",
     "img-works06/1_MISC.png",
   ];
+  const navigate = useNavigate();
+  const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    if (width < 576) navigate("/works");
+    const handleResize = () => setWidth(window.innerWidth);
 
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [width]);
   return (
     <>
       <div>
