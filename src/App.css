@@ -442,6 +442,15 @@ li {
   animation: moveP 3s infinite;
   animation-delay: 3s;
 }
+.scrollP-tv-Works {
+  rotate: 270deg;
+  opacity: 0;
+  position: absolute;
+  top: 15%;
+  margin: 0;
+  animation: moveP 3s infinite;
+  animation-delay: 3s;
+}
 @keyframes moveP {
   from {
     transform: translateX(0);
@@ -484,8 +493,18 @@ li {
   height: 9%;
 }
 .w-custom-tv-works {
-  width: 50%;
+  width: 30%;
 }
+.m-custom-works-tv {
+  margin-top: 20vh;
+}
+.gap-works-tv {
+  gap: 30vh;
+}
+.mb-works-tv {
+  margin-bottom: 15vh;
+}
+
 /* desktop */
 
 @media screen and (min-width: 992px) {

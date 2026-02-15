@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 const WorksTv = () => {
   const works = [
@@ -9,35 +9,33 @@ const WorksTv = () => {
     "img-works05/1_POPUP.png",
     "img-works06/1_MISC.png",
   ];
-  const containerRef = useRef(null);
   useEffect(() => {
-    const container = containerRef.current;
-    const handleWheel = (e) => {
-      e.preventDefault();
-      container.scrollLeft += e.deltaY;
-    };
-    container.addEventListener("wheel", handleWheel, { passive: false });
-    return () => {
-      container.removeEventListener("wheel", handleWheel);
-    };
+    window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div ref={containerRef} className="d-flex overflow-scroll align-items-center vh-100 gap-5">
-      {works.map((e, i) => {
-        return (
-          <div key={i} className="w-custom-tv-works flex-shrink-0">
-            <h1>title</h1>
-            <img
-              src={e}
-              alt="foto"
-              className="w-100
-    "
-            />
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <div>
+        <div className="d-flex flex-column align-items-center min-vh-100 gap-works-tv m-custom-works-tv mb-works-tv container">
+          {works.map((e, i) => {
+            return (
+              <div
+                key={i}
+                className={`w-custom-tv-works flex-shrink-0 panel ${i % 2 === 0 ? "align-self-end" : "align-self-start"} ${i !== 1 ? "shadow-custom" : ""}`}
+              >
+                <img
+                  src={e}
+                  alt="foto"
+                  className="w-100
+      "
+                />
+              </div>
+            );
+          })}
+        </div>
+        <p className="scrollP-tv-Works">SCROLL DOWN</p>
+      </div>
+    </>
   );
 };
 export default WorksTv;
