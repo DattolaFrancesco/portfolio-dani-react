@@ -21,7 +21,7 @@ const WorksTv = () => {
             return (
               <div
                 key={i}
-                className={`w-custom-tv-works flex-shrink-0 panel ${i % 2 === 0 ? "align-self-end" : "align-self-start"} ${i !== 1 ? "shadow-custom" : ""}`}
+                className={`w-custom-tv-works z-3 flex-shrink-0 panel ${i % 2 === 0 ? "align-self-end" : "align-self-start"} ${i !== 1 ? "shadow-custom" : ""}`}
               >
                 <img
                   src={e}
@@ -34,6 +34,14 @@ const WorksTv = () => {
           })}
         </div>
         <p className="scrollP-tv-Works">SCROLL DOWN</p>
+        <div className="marquee position-fixed bottom-0 z-0">
+          <div className="marquee-track">
+            <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
+            <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
+            <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
+            <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
+          </div>
+        </div>
       </div>
     </>
   );
