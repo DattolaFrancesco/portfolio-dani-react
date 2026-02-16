@@ -4,12 +4,12 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Tv = () => {
   const location = useLocation();
   const images = [
-    "tv/worksTv/1_QUEIO.png",
-    "tv/worksTv/2_CHARACTER.png",
-    "tv/worksTv/3_LETTERING.png",
-    "tv/worksTv/4_WINDOW.png",
-    "tv/worksTv/5_POPUP.png",
-    "tv/worksTv/6_MISC.png",
+    "tv/worksTv/1_QUEIO.webp",
+    "tv/worksTv/2_CHARACTER.webp",
+    "tv/worksTv/3_LETTERING.webp",
+    "tv/worksTv/4_WINDOW.webp",
+    "tv/worksTv/5_POPUP.webp",
+    "tv/worksTv/6_MISC.webp",
   ];
   const tagRelocation = ["01Queio", "02Character", "03Lettering", "04Vetrina", "05Popup", "06Misc"];
   const navigate = useNavigate();
