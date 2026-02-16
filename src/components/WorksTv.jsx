@@ -6,7 +6,7 @@ const WorksTv = () => {
     "img-works01/1_QUEIO.webp",
     "img-works02/1_CHARACTER.webp",
     "img-works03/1_LETTERING.webp",
-    "img-works04/1_VETRINA.JPG",
+    "img-works04/1_VETRINA.webp",
     "img-works05/1_POPUP.webp",
     "img-works06/1_MISC.png",
   ];
