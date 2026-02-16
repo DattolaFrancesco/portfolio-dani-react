@@ -8,7 +8,7 @@ const WorksTv = () => {
     "img-works03/1_LETTERING.webp",
     "img-works04/1_VETRINA.webp",
     "img-works05/1_POPUP.webp",
-    "img-works06/1_MISC.png",
+    "img-works06/1_MISC.jpg",
   ];
   const tagRelocation = ["01Queio", "02Character", "03Lettering", "04Vetrina", "05Popup", "06Misc"];
   const navigate = useNavigate();
