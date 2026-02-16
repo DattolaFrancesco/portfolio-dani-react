@@ -4,17 +4,13 @@ import { useState, useEffect, useRef } from "react";
 const NavBar = () => {
   const location = useLocation();
   const navigate = useNavigate();
-
   const [width, setWidth] = useState(window.innerWidth);
-  const [currentPath, setCurrentPath] = useState(location.pathname);
 
   useEffect(() => {
-    console.log(location.pathname);
-    setCurrentPath(location.pathname);
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [location]);
+  }, []);
 
   return (
     <div
@@ -29,8 +25,11 @@ const NavBar = () => {
 
       <div className="list-unstyled d-flex align-items-center mb-0 bg-glass rounded-pill px-2 w-max-content gap-3 py-2">
         {width > 576 ? (
-          <Link to="/WorksTv" className={`nav-link fw-bold px-2 rounded-pill ${location.pathname === "/WorksTv" ? "selector" : ""}`}>
-            WORKS
+          <Link
+            to={location.pathname === "/WorksTv" ? "/#tv" : "/WorksTv"}
+            className={`nav-link fw-bold px-2 rounded-pill ${location.pathname === "/WorksTv" || location.pathname === "/works" ? "selector" : ""}`}
+          >
+            {location.pathname === "/WorksTv" ? "TV" : "WORKS"}
           </Link>
         ) : (
           <Link

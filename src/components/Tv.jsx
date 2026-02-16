@@ -22,7 +22,7 @@ const Tv = () => {
     if (counter < 0) setCounter(5);
   };
   const pushWork = (n) => {
-    navigate(`/works#${tagRelocation[n]}`);
+    navigate(`/WorksTv#${tagRelocation[n]}`);
   };
   const redirect = () => {
     const hash = location.hash;
@@ -54,7 +54,7 @@ const Tv = () => {
 
   return (
     <section id="tv" className="size-custom position-relative">
-      <img src="tv/OfficialBG.webp" alt="" className="size-custom" />
+      <img src="tv/Tvnobtn.webp" alt="" className="size-custom" />
       <img src={`${image ? image : "imgLanding/blur.gif"}`} alt="" className="position-absolute  custom-tv-size" />
       <a
         onClick={(e) => {

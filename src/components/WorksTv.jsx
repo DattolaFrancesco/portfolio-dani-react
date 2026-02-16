@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const WorksTv = () => {
@@ -40,16 +40,15 @@ const WorksTv = () => {
       <div className="d-flex flex-column align-items-center min-vh-100 gap-works-tv m-custom-works-tv mb-works-tv ">
         {works.map((e, i) => {
           return (
-            <>
-              <div key={i + 3} id={tagRelocation[i]} />
+            <Fragment key={i}>
+              <div id={tagRelocation[i]} />
               <Link
-                key={i}
                 to=""
                 className={`${i % 2 === 0 ? "align-self-end" : "align-self-start"} w-custom-tv-works z-3 flex-shrink-0 panel ${i !== 1 ? "shadow-custom" : ""}`}
               >
                 <img src={e} alt="foto" className="w-100" />
               </Link>
-            </>
+            </Fragment>
           );
         })}
       </div>
