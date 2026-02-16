@@ -3,11 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 
 const WorksTv = () => {
   const works = [
-    "img-works01/1_QUEIO.png",
-    "img-works02/1_CHARACTER.png",
-    "img-works03/1_LETTERING.png",
+    "img-works01/1_QUEIO.webp",
+    "img-works02/1_CHARACTER.webp",
+    "img-works03/1_LETTERING.webp",
     "img-works04/1_VETRINA.JPG",
-    "img-works05/1_POPUP.png",
+    "img-works05/1_POPUP.webp",
     "img-works06/1_MISC.png",
   ];
   const tagRelocation = ["01Queio", "02Character", "03Lettering", "04Vetrina", "05Popup", "06Misc"];

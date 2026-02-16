@@ -37,7 +37,7 @@ img {
   left: 0;
   inset: 0;
   z-index: -10;
-  background-image: url("/imgLanding/TEXTURE.png");
+  background-image: url("/imgLanding/TEXTURE.webp");
   background-position: center;
   background-size: cover;
   will-change: transform;

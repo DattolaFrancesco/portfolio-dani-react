@@ -54,7 +54,7 @@ const Tv = () => {
 
   return (
     <section id="tv" className="size-custom position-relative">
-      <img src="tv/OfficialBG.png" alt="" className="size-custom" />
+      <img src="tv/OfficialBG.webp" alt="" className="size-custom" />
       <img src={`${image ? image : "imgLanding/blur.gif"}`} alt="" className="position-absolute  custom-tv-size" />
       <a
         onClick={(e) => {

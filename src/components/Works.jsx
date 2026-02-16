@@ -4,28 +4,28 @@ import * as bootstrap from "bootstrap";
 
 const Works = () => {
   const works01 = [
-    "/img-works01/1_QUEIO.png",
-    "/img-works01/2_QUEIO.png",
-    "/img-works01/3_QUEIO.png",
-    "/img-works01/4_QUEIO.png",
-    "/img-works01/5_QUEIO.png",
-    "/img-works01/6_QUEIO.png",
-    "/img-works01/7_QUEIO.png",
-    "/img-works01/8_QUEIO.png",
+    "/img-works01/1_QUEIO.webp",
+    "/img-works01/2_QUEIO.webp",
+    "/img-works01/3_QUEIO.webp",
+    "/img-works01/4_QUEIO.webp",
+    "/img-works01/5_QUEIO.webp",
+    "/img-works01/6_QUEIO.webp",
+    "/img-works01/7_QUEIO.webp",
+    "/img-works01/8_QUEIO.webp",
   ];
   const works02 = [
-    "/img-works02/1_CHARACTER.png",
-    "/img-works02/2_CHARACTER.png",
-    "/img-works02/3_CHARACTER.png",
-    "/img-works02/4_CHARACTER.png",
-    "/img-works02/5_CHARACTER.png",
-    "/img-works02/6_CHARACTER.png",
-    "/img-works02/7_CHARACTER.png",
-    "/img-works02/8_CHARACTER.png",
+    "/img-works02/1_CHARACTER.webp",
+    "/img-works02/2_CHARACTER.webp",
+    "/img-works02/3_CHARACTER.webp",
+    "/img-works02/4_CHARACTER.webp",
+    "/img-works02/5_CHARACTER.webp",
+    "/img-works02/6_CHARACTER.webp",
+    "/img-works02/7_CHARACTER.webp",
+    "/img-works02/8_CHARACTER.webp",
   ];
-  const works03 = ["/img-works03/1_LETTERING.png", "/img-works03/2_LETTERING.png"];
-  const works04 = ["/img-works04/1_VETRINA.JPG", "/img-works04/2_VETRINA.JPG", "/img-works04/3_VETRINA.JPG", "/img-works04/4_VETRINA.JPG"];
-  const works05 = ["/img-works05/1_POPUP.png", "/img-works05/2_POPUP.png", "/img-works05/3_POPUP.png", "/img-works05/4_POPUP.png"];
+  const works03 = ["/img-works03/1_LETTERING.webp", "/img-works03/2_LETTERING.webp"];
+  const works04 = ["/img-works04/1_VETRINA.webp", "/img-works04/2_VETRINA.webp", "/img-works04/3_VETRINA.webp", "/img-works04/4_VETRINA.webp"];
+  const works05 = ["/img-works05/1_POPUP.webp", "/img-works05/2_POPUP.webp", "/img-works05/3_POPUP.webp", "/img-works05/4_POPUP.webp"];
   const works06 = ["/img-works06/1_MISC.png", "/img-works06/2_MISC.png", "/img-works06/3_MISC.png", "/img-works06/4_MISC.png"];
   const works = [works01, works02, works03, works04, works05, works06];
   const tagRelocation = ["01Queio", "02Character", "03Lettering", "04Vetrina", "05Popup", "06Misc"];

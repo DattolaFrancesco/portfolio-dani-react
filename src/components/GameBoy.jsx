@@ -58,7 +58,7 @@ const GameBoy = () => {
   }, [location]);
   return (
     <section id="game-boy" className="position-relative">
-      <img id="worksDisplayer" src="imgLanding/GAMEBOYOFFICIAL.png" alt="" className="size-custom" />
+      <img id="worksDisplayer" src="imgLanding/GAMEBOYOFFICIAL.webp" alt="" className="size-custom" />
       <img id="worksPhoto" src={image} alt="" className="position-absolute custom-gameboy-size" />
       <a
         onClick={(e) => {

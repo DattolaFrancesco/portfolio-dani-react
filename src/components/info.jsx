@@ -22,7 +22,7 @@ const Info = () => {
               </a>
             </Col>
             <Col xs={12} className="d-flex justify-content-end moveImg" style={{ zIndex: "999" }}>
-              <img src="/imgLanding/TELEFONOWEBMOBILE.png" alt="" className="w-custom-info-cell" />
+              <img src="/imgLanding/TELEFONOWEBMOBILE.webp" alt="" className="w-custom-info-cell" />
             </Col>
           </Row>
         </section>
