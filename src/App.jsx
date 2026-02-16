@@ -47,12 +47,12 @@ function App() {
     <BrowserRouter>
       <div>
         <Landingscaping />
-        <header>
+        <header className="d-flex justify-content-center">
           <NavBar />
         </header>
         <main>
           <Routes>
-            <Route path={"/"} element={<LandingPage />} />
+            <Route path={"/*"} element={<LandingPage />} />
             <Route path={"/info"} element={<Info />} />
             <Route path={"/works"} element={<Works />} />
             <Route path={"/WorksTv"} element={<WorksTv />} />

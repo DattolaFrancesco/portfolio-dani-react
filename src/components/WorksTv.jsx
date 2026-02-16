@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const WorksTv = () => {
   const works = [
@@ -10,8 +10,23 @@ const WorksTv = () => {
     "img-works05/1_POPUP.png",
     "img-works06/1_MISC.png",
   ];
+  const tagRelocation = ["01Queio", "02Character", "03Lettering", "04Vetrina", "05Popup", "06Misc"];
   const navigate = useNavigate();
   const [width, setWidth] = useState(window.innerWidth);
+  const getWork = () => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      let loc = location.hash;
+      const id = loc.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 500);
+  };
+  useEffect(() => {
+    getWork();
+  }, [location]);
   useEffect(() => {
     window.scrollTo(0, 0);
     if (width < 576) navigate("/works");
@@ -22,32 +37,31 @@ const WorksTv = () => {
   }, [width]);
   return (
     <>
-      <div>
-        <div className="d-flex flex-column align-items-center min-vh-100 gap-works-tv m-custom-works-tv mb-works-tv container">
-          {works.map((e, i) => {
-            return (
-              <div
+      <div className="d-flex flex-column align-items-center min-vh-100 gap-works-tv m-custom-works-tv mb-works-tv ">
+        {works.map((e, i) => {
+          return (
+            <>
+              <div key={i + 3} id={tagRelocation[i]} />
+              <Link
                 key={i}
-                className={`w-custom-tv-works z-3 flex-shrink-0 panel ${i % 2 === 0 ? "align-self-end" : "align-self-start"} ${i !== 1 ? "shadow-custom" : ""}`}
+                to=""
+                className={`${i % 2 === 0 ? "align-self-end" : "align-self-start"} w-custom-tv-works z-3 flex-shrink-0 panel ${i !== 1 ? "shadow-custom" : ""}`}
               >
-                <img
-                  src={e}
-                  alt="foto"
-                  className="w-100
-      "
-                />
-              </div>
-            );
-          })}
-        </div>
-        <p className="scrollP-tv-Works">SCROLL DOWN</p>
-        <div className="marquee position-fixed bottom-0 z-0">
-          <div className="marquee-track">
-            <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
-            <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
-            <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
-            <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
-          </div>
+                <img src={e} alt="foto" className="w-100" />
+              </Link>
+            </>
+          );
+        })}
+      </div>
+
+      <p className="scrollP-tv-Works">SCROLL DOWN</p>
+
+      <div className="marquee position-fixed bottom-0 z-0">
+        <div className="marquee-track">
+          <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
+          <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
+          <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
+          <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
         </div>
       </div>
     </>

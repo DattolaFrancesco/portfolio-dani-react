@@ -14,7 +14,7 @@ const LandingPage = () => {
   return (
     <>
       <Hero />
-      {window.innerWidth > 576 ? <Tv /> : <GameBoy />}
+      {width > 576 ? <Tv /> : <GameBoy />}
     </>
   );
 };

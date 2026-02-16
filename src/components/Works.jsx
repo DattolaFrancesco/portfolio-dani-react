@@ -89,10 +89,10 @@ const Works = () => {
                       <button
                         key={i}
                         type="button"
-                        data-bs-target={`#${titles[counter - 1]}`}
+                        data-bs-target={`#${titles[i]}`}
                         data-bs-slide-to={i}
-                        className="active"
-                        aria-current="true"
+                        className={i === 0 ? "active" : ""}
+                        aria-current={i === 0 ? "true" : undefined}
                         aria-label={`Slide ${i + 1}`}
                       ></button>
                     );

@@ -1,5 +1,7 @@
 /* body */
-
+:root {
+  --bs-carousel-indicator-active-bg: #ff0000;
+}
 html,
 body {
   touch-action: manipulation;
@@ -15,6 +17,9 @@ img {
   -webkit-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
+}
+.w-custom-navbar {
+  width: 95%;
 }
 .animationNav {
   animation: introNav 3s forwards;
@@ -168,6 +173,159 @@ a.phone-link:active {
 li {
   transition: all 0.5s ease;
 }
+
+.mh-custom {
+  max-height: 20rem;
+  margin-top: 10%;
+}
+.custom-m {
+  margin-top: 35%;
+}
+.fw-custom {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.vh-custom-info {
+  min-height: 90dvh;
+}
+.fs-custom-works {
+  font-size: 3rem;
+  letter-spacing: -2px;
+}
+
+.interval {
+  background-color: transparent;
+  height: 5px;
+}
+
+.carousel-item {
+  object-fit: cover;
+  object-position: center;
+}
+
+.carousel-inner {
+  width: 75%;
+  margin-inline: auto;
+}
+.h-custom-character {
+  height: 25rem;
+}
+.shadow-custom {
+  -webkit-box-shadow: -1px 1px 23px 1px rgba(0, 0, 0, 0.76);
+  box-shadow: -1px 1px 23px 1px rgba(0, 0, 0, 0.76);
+}
+.none {
+  display: none;
+}
+.selector {
+  background-color: red;
+}
+.w-max-content {
+  width: max-content;
+}
+.underline {
+  display: list-item;
+  list-style: none;
+}
+.underline::marker {
+  display: none;
+}
+.underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5%;
+  background-color: #000;
+}
+.fw-custom-info {
+  font-weight: 550;
+}
+.scrollP {
+  rotate: 270deg;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  bottom: 30%;
+  margin: 0;
+  animation: moveP 3s infinite;
+  animation-delay: 3s;
+}
+.scrollP-tv-Works {
+  rotate: 270deg;
+  opacity: 0;
+  position: absolute;
+  top: 12%;
+  margin: 0;
+  animation: moveP 3s infinite;
+  animation-delay: 3s;
+}
+
+.gap-custom-info {
+  gap: 5rem;
+}
+.w-custom-info-cell {
+  width: 65%;
+}
+.custom-tv-size {
+  top: 9%;
+  left: 8%;
+  width: 66%;
+  height: 80%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+#btn-tv-up {
+  right: 8.7%;
+  top: 36%;
+  width: 6%;
+  height: 9%;
+}
+#btn-tv-down {
+  right: 8.7%;
+  top: 51.5%;
+  width: 6%;
+  height: 9%;
+}
+#btn-tv-push {
+  right: 8.7%;
+  bottom: 20%;
+  width: 6%;
+  height: 9%;
+}
+.w-custom-tv-works {
+  width: 30%;
+}
+.m-custom-works-tv {
+  margin-top: 6vh;
+  margin-inline: 5%;
+}
+.gap-works-tv {
+  gap: 10vh;
+}
+.mb-works-tv {
+  margin-bottom: 15vh;
+}
+.rotate-btn-tv {
+  rotate: 180deg;
+}
+.carousel-indicators {
+  margin-bottom: -2rem !important;
+}
+
+/* media query  */
+@media screen and (min-width: 480px) {
+  header,
+  main {
+    display: block;
+  }
+
+  .custom-gameboy-size {
+    object-fit: fill;
+  }
+}
 @media screen and (max-height: 500px) and (orientation: landscape) {
   header,
   main {
@@ -180,16 +338,7 @@ li {
     display: flex !important;
   }
 }
-@media screen and (min-width: 480px) {
-  header,
-  main {
-    display: block;
-  }
 
-  .custom-gameboy-size {
-    object-fit: fill;
-  }
-}
 @media screen and (min-width: 576px) {
   header,
   main {
@@ -199,6 +348,15 @@ li {
   .bg-custom::before {
     content: "";
     top: 0.1%;
+  }
+  .m-custom-works-tv {
+    margin-top: 0;
+  }
+  .w-custom-tv-works {
+    width: 35vw;
+  }
+  .gap-works-tv {
+    gap: 19vh;
   }
 }
 
@@ -216,6 +374,9 @@ li {
     top: 0%;
     background-image: url("/imgLanding/Orizzontale_Senza.png");
     background-position: center;
+  }
+  .gap-works-tv {
+    gap: 15vh;
   }
 }
 @media screen and (min-width: 992px) {
@@ -311,8 +472,35 @@ li {
   .mh-custom {
     max-height: 30rem;
   }
+  .w-custom-info-cell {
+    width: 35%;
+  }
+  .gap-custom-info {
+    gap: 0;
+  }
+  #info-cont .align-items-center {
+    align-items: end;
+  }
+  .w-custom-tv-works {
+    width: 25vw;
+  }
 }
-/* // animations */
+
+/* keyFrames */
+@keyframes moveP {
+  from {
+    transform: translateX(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(30%);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 0.5;
+  }
+}
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -361,160 +549,5 @@ li {
   }
   to {
     transform: translateX(0);
-  }
-}
-
-.mh-custom {
-  max-height: 20rem;
-  margin-top: 10%;
-}
-.custom-m {
-  margin-top: 35%;
-}
-.fw-custom {
-  font-weight: 500;
-  font-size: 1.2rem;
-}
-.vh-custom-info {
-  min-height: 90dvh;
-}
-.fs-custom-works {
-  font-size: 3rem;
-  letter-spacing: -2px;
-}
-
-.interval {
-  background-color: transparent;
-  height: 5px;
-}
-
-.carousel-item {
-  object-fit: cover;
-  object-position: center;
-}
-
-.carousel-inner {
-  width: 75%;
-  margin-inline: auto;
-}
-.h-custom-character {
-  height: 25rem;
-}
-.shadow-custom {
-  -webkit-box-shadow: -1px 1px 23px 1px rgba(0, 0, 0, 0.76);
-  box-shadow: -1px 1px 23px 1px rgba(0, 0, 0, 0.76);
-}
-.none {
-  display: none;
-}
-.selector {
-  background-color: red;
-}
-.w-max-content {
-  width: max-content;
-}
-.underline {
-  display: list-item;
-  list-style: none;
-}
-.underline::marker {
-  display: none;
-}
-.underline::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 5%;
-  background-color: #000;
-}
-.fw-custom-info {
-  font-weight: 550;
-}
-.scrollP {
-  rotate: 270deg;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  bottom: 30%;
-  margin: 0;
-  animation: moveP 3s infinite;
-  animation-delay: 3s;
-}
-.scrollP-tv-Works {
-  rotate: 270deg;
-  opacity: 0;
-  position: absolute;
-  top: 12%;
-  margin: 0;
-  animation: moveP 3s infinite;
-  animation-delay: 3s;
-}
-@keyframes moveP {
-  from {
-    transform: translateX(0);
-    opacity: 0.5;
-  }
-  50% {
-    transform: translateX(30%);
-    opacity: 0.5;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 0.5;
-  }
-}
-.gap-custom-info {
-  gap: 5rem;
-}
-.w-custom-info-cell {
-  width: 65%;
-}
-.custom-tv-size {
-  top: 9%;
-  left: 8%;
-  width: 66%;
-  height: 80%;
-  object-fit: cover;
-  object-position: center;
-  z-index: -1;
-}
-#btn-tv-up {
-  right: 8.7%;
-  top: 36%;
-  width: 6%;
-  height: 9%;
-}
-#btn-tv-down {
-  right: 8.7%;
-  top: 51.5%;
-  width: 6%;
-  height: 9%;
-}
-.w-custom-tv-works {
-  width: 30%;
-}
-.m-custom-works-tv {
-  margin-top: 20vh;
-}
-.gap-works-tv {
-  gap: 30vh;
-}
-.mb-works-tv {
-  margin-bottom: 15vh;
-}
-
-/* desktop */
-
-@media screen and (min-width: 992px) {
-  .w-custom-info-cell {
-    width: 35%;
-  }
-  .gap-custom-info {
-    gap: 0;
-  }
-  #info-cont .align-items-center {
-    align-items: end;
   }
 }
