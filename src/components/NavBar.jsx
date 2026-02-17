@@ -14,6 +14,7 @@ const NavBar = () => {
 
   return (
     <div
+      id="SpacedNavBar"
       className={`animationNav d-flex justify-content-between align-items-center mt-2 ${
         location.pathname === "/info" ? "position-sticky" : "position-fixed"
       } top-0 w-custom-navbar`}

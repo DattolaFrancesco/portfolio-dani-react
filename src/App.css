@@ -338,6 +338,9 @@ li {
   main.d-flex {
     display: none !important;
   }
+  #SpacedNavBar.d-flex {
+    display: none !important;
+  }
   .display-custom-landscape {
     display: flex !important;
   }
