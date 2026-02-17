@@ -1,5 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
+import { ScrollTrigger } from "gsap/all";
 
 const NavBar = () => {
   const location = useLocation();
@@ -20,13 +21,23 @@ const NavBar = () => {
       } top-0 w-custom-navbar`}
       style={{ zIndex: "9999" }}
     >
-      <a className="logo" onClick={() => navigate("/")} style={{ cursor: "pointer" }}>
+      <a
+        className="logo"
+        onClick={() => {
+          ScrollTrigger.getAll().forEach((t) => t.kill());
+          navigate("/");
+        }}
+        style={{ cursor: "pointer" }}
+      >
         <img src="/imgLanding/Cuore.png" alt="Logo" />
       </a>
 
       <div className="list-unstyled d-flex align-items-center mb-0 bg-glass rounded-pill px-2 w-max-content gap-3 py-2">
         {width > 576 ? (
           <Link
+            onClick={() => {
+              ScrollTrigger.getAll().forEach((t) => t.kill());
+            }}
             to={location.pathname === "/WorksTv" ? "/#tv" : "/WorksTv"}
             className={`nav-link fw-bold px-2 rounded-pill ${location.pathname === "/WorksTv" || location.pathname === "/works" ? "selector" : ""}`}
           >
@@ -41,7 +52,13 @@ const NavBar = () => {
           </Link>
         )}
 
-        <Link to="/info" className={`nav-link rounded-pill px-2 fw-bold ${location.pathname === "/info" ? "selector" : ""}`}>
+        <Link
+          onClick={() => {
+            ScrollTrigger.getAll().forEach((t) => t.kill());
+          }}
+          to="/info"
+          className={`nav-link rounded-pill px-2 fw-bold ${location.pathname === "/info" ? "selector" : ""}`}
+        >
           INFO
         </Link>
       </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect, Fragment } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate, Routes, Route } from "react-router-dom";
 
 const WorksTv = () => {
   const location = useLocation();
@@ -44,7 +44,7 @@ const WorksTv = () => {
             <Fragment key={i}>
               <div id={tagRelocation[i]} />
               <Link
-                to=""
+                to={`/WorksTv/${tagRelocation[i]}`}
                 className={`${i % 2 === 0 ? "align-self-end" : "align-self-start"} w-custom-tv-works z-3 flex-shrink-0 panel ${i !== 1 ? "shadow-custom" : ""}`}
               >
                 <img src={e} alt="foto" className="w-100" />

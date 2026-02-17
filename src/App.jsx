@@ -9,6 +9,7 @@ import Works from "./components/Works";
 import { useEffect } from "react";
 import Landingscaping from "./components/Landscaping";
 import WorksTv from "./components/WorksTv";
+import SingleWorksTv from "./components/SingleWorkTv";
 
 function App() {
   const works01 = [
@@ -57,6 +58,7 @@ function App() {
             <Route path={"/info"} element={<Info />} />
             <Route path={"/works"} element={<Works />} />
             <Route path={"/WorksTv"} element={<WorksTv />} />
+            <Route path="/WorksTv/:work" element={<SingleWorksTv />} />
           </Routes>
         </main>
       </div>
