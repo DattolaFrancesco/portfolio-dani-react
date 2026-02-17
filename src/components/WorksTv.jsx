@@ -1,14 +1,15 @@
 import { useState, useEffect, Fragment } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const WorksTv = () => {
+  const location = useLocation();
   const works = [
     "img-works01/1_QUEIO.webp",
     "img-works02/1_CHARACTER.webp",
     "img-works03/1_LETTERING.webp",
     "img-works04/1_VETRINA.webp",
     "img-works05/1_POPUP.webp",
-    "img-works06/1_MISC.jpg",
+    "img-works06/5_MISC.webp",
   ];
   const tagRelocation = ["01Queio", "02Character", "03Lettering", "04Vetrina", "05Popup", "06Misc"];
   const navigate = useNavigate();
