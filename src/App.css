@@ -71,7 +71,7 @@ img {
 
 .bg-custom {
   position: relative;
-  min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
 }
 .bg-custom::before {
@@ -97,7 +97,7 @@ img {
 }
 .marquee {
   position: absolute;
-  bottom: 8%;
+  bottom: 2%;
   width: 100%;
   overflow: hidden;
   animation: moveMarquee 3s forwards;
