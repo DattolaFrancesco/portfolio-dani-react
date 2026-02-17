@@ -266,6 +266,9 @@ li {
   gap: 5rem;
 }
 .w-custom-info-cell {
+  width: 60%;
+}
+.w-custom-info-cell-desktop {
   width: 45%;
 }
 .custom-tv-size {
@@ -363,6 +366,9 @@ li {
   }
   .gap-works-tv {
     gap: 19vh;
+  }
+  .w-custom-info-cell {
+    width: 50%;
   }
 }
 

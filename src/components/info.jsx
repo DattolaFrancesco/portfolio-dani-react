@@ -31,7 +31,7 @@ const Info = () => {
           <img
             src="/imgLanding/TELEFONOWEBMOBILE.webp"
             alt=""
-            className="w-custom-info-cell moveImg position-absolute bottom-0 end-0"
+            className="w-custom-info-cell-desktop moveImg position-absolute bottom-0 end-0"
             style={{ zIndex: "999" }}
           />
 
