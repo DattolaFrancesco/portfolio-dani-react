@@ -218,7 +218,8 @@ li {
   display: none;
 }
 .selector {
-  background-color: red;
+  color: red !important;
+  /* background-color: #ff0000 !important; */
 }
 .w-max-content {
   width: max-content;

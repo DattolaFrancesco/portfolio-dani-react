@@ -73,7 +73,7 @@ const Works = () => {
       {works.map((e, i) => {
         counter++;
         return (
-          <div key={i}>
+          <div key={i} className={`${i === 0 ? "mt-4" : ""}`}>
             <section className="interval" id={tagRelocation[i]}></section>
             <section className={i === 5 ? "mb-5" : ""}>
               <div className="container">
