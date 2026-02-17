@@ -98,10 +98,10 @@ const Works = () => {
                     );
                   })}
                 </div>
-                <div className={`carousel-inner ${i === 1 ? "" : "shadow-custom"}`}>
+                <div className={`carousel-inner ${i === 1 ? "" : "shadow-custom"}`} style={{ height: "100%" }}>
                   {e.map((e, i) => {
                     return (
-                      <div className={`carousel-item ${i === 0 ? "active" : ""}`} key={i}>
+                      <div className={` carousel-item ${i === 0 ? "active" : ""} `} key={i}>
                         <img src={e} className="d-block w-100" alt="queio works" />
                       </div>
                     );

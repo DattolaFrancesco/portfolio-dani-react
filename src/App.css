@@ -201,7 +201,6 @@ li {
 .carousel-item {
   object-fit: cover;
   object-position: center;
-  height: 45vh;
 }
 
 .carousel-inner {
