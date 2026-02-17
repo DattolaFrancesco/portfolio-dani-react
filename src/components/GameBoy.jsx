@@ -6,7 +6,7 @@ const GameBoy = () => {
   console.log(location.hash);
   const navigate = useNavigate();
   const images = [
-    "/imgLanding/1_QUEIO.png",
+    "/imgLanding/QUEIO_1.png",
     "/imgLanding/2_CHARACTER.png",
     "/imgLanding/3_LETTERING.png",
     "/imgLanding/4_Vetrina.png",
