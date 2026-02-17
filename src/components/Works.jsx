@@ -36,6 +36,7 @@ const Works = () => {
     "Character design explorations focused on expressive shapes and personality.",
     "Explorations lettering, featuring custom alpjhabets, expressive letterforms and experimental sketches.",
     "Window display designs developed to creare strong visual impact and storytelling for retail spaces...",
+    "Live spray painting pop-up event featuring on-site T-shirt customization and an exhibition of original canvases.",
     "Misc random works",
   ];
   let counter = 0;
