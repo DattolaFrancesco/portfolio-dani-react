@@ -248,7 +248,7 @@ li {
   transform-origin: top right;
   opacity: 0;
   position: absolute;
-  right: 4%;
+  right: 6%;
   bottom: 35%;
   margin: 0;
   animation: moveP 3s infinite;
