@@ -98,7 +98,7 @@ const Works = () => {
                     );
                   })}
                 </div>
-                <div className={`carousel-inner ${i === 1 ? "" : "shadow-custom"}`} style={{ height: i === 2 ? "53vh" : "49vh" }}>
+                <div className={`carousel-inner ${i === 1 ? "" : "shadow-custom"}`} style={{ height: i === 2 ? "53.5vh" : "49vh" }}>
                   {e.map((e, i) => {
                     return (
                       <div className={` carousel-item ${i === 0 ? "active" : ""} `} key={i}>
