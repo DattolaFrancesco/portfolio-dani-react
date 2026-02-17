@@ -7,11 +7,11 @@ const GameBoy = () => {
   const navigate = useNavigate();
   const images = [
     "/imgLanding/QUEIO_1.png",
-    "/imgLanding/2_CHARACTER.png",
+    "/imgLanding/CHARACTER_2.png",
     "/imgLanding/3_LETTERING.png",
     "/imgLanding/4_Vetrina.png",
     "/imgLanding/5_POPUP.png",
-    "/imgLanding/6_MISC.png",
+    "/imgLanding/MISC_6.png",
   ];
   const tagRelocation = ["01Queio", "02Character", "03Lettering", "04Vetrina", "05Popup", "06Misc"];
   const blur = new Image();
