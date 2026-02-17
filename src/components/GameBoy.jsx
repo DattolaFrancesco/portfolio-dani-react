@@ -15,7 +15,7 @@ const GameBoy = () => {
   ];
   const tagRelocation = ["01Queio", "02Character", "03Lettering", "04Vetrina", "05Popup", "06Misc"];
   const blur = new Image();
-  blur.src = "imgLanding/blur.webp";
+  blur.src = "imgLanding/blur.gif";
   const btnUpRef = useRef(null);
   const btnDownRef = useRef(null);
   const btnPushRef = useRef(null);
