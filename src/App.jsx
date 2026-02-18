@@ -4,6 +4,7 @@ import { lazy, Suspense } from "react";
 
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
+import { Spinner } from "react-bootstrap";
 const NavBar = lazy(() => import("./components/NavBar"));
 const LandingPage = lazy(() => import("./components/LandingPage"));
 const Info = lazy(() => import("./components/info"));
@@ -54,6 +55,7 @@ function App() {
       fallback={
         <div className="d-flex justify-content-center align-items-center vh-100 ">
           <h1 className="display-1 text-danger">ELSOLITO</h1>
+          <Spinner />
         </div>
       }
     >
