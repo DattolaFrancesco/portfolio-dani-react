@@ -1,15 +1,17 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./App.css";
-import NavBar from "./components/NavBar";
+import { lazy, Suspense } from "react";
+
 import { HashRouter, Routes, Route } from "react-router-dom";
-import LandingPage from "./components/LandingPage";
-import Info from "./components/info";
-import Works from "./components/Works";
 import { useEffect } from "react";
-import Landingscaping from "./components/Landscaping";
-import WorksTv from "./components/WorksTv";
-import SingleWorksTv from "./components/SingleWorkTv";
+const NavBar = lazy(() => import("./components/NavBar"));
+const LandingPage = lazy(() => import("./components/LandingPage"));
+const Info = lazy(() => import("./components/info"));
+const Works = lazy(() => import("./components/Works"));
+const Landingscaping = lazy(() => import("./components/Landscaping"));
+const WorksTv = lazy(() => import("./components/WorksTv"));
+const SingleWorksTv = lazy(() => import("./components/SingleWorkTv"));
 
 function App() {
   const works01 = [
@@ -46,23 +48,25 @@ function App() {
   }, []);
 
   return (
-    <HashRouter>
-      <div>
-        <Landingscaping />
-        <header className="d-flex justify-content-center">
-          <NavBar />
-        </header>
-        <main>
-          <Routes>
-            <Route path={"/*"} element={<LandingPage />} />
-            <Route path={"/info"} element={<Info />} />
-            <Route path={"/works"} element={<Works />} />
-            <Route path={"/WorksTv"} element={<WorksTv />} />
-            <Route path="/WorksTv/:work" element={<SingleWorksTv />} />
-          </Routes>
-        </main>
-      </div>
-    </HashRouter>
+    <Suspense fallback={<div>LOADING...</div>}>
+      <HashRouter>
+        <div>
+          <Landingscaping />
+          <header className="d-flex justify-content-center">
+            <NavBar />
+          </header>
+          <main>
+            <Routes>
+              <Route path={"/*"} element={<LandingPage />} />
+              <Route path={"/info"} element={<Info />} />
+              <Route path={"/works"} element={<Works />} />
+              <Route path={"/WorksTv"} element={<WorksTv />} />
+              <Route path="/WorksTv/:work" element={<SingleWorksTv />} />
+            </Routes>
+          </main>
+        </div>
+      </HashRouter>
+    </Suspense>
   );
 }
 
