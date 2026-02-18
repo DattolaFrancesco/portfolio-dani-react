@@ -30,7 +30,7 @@ const WorksTv = () => {
   }, [location]);
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (width < 576) navigate("/works");
+    if (width < 768) navigate("/works");
     const handleResize = () => setWidth(window.innerWidth);
 
     window.addEventListener("resize", handleResize);

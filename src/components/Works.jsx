@@ -62,7 +62,7 @@ const Works = () => {
   const navigate = useNavigate();
   const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
-    if (width > 576) navigate("/WorksTV");
+    if (width > 768) navigate("/WorksTV");
     const handleResize = () => setWidth(window.innerWidth);
 
     window.addEventListener("resize", handleResize);
@@ -98,7 +98,7 @@ const Works = () => {
                     );
                   })}
                 </div>
-                <div className={`carousel-inner ${i === 1 ? "" : "shadow-custom"}`} style={{ height: i === 2 ? "53.5vh" : "49vh" }}>
+                <div className={`carousel-inner ${i === 1 ? "" : "shadow-custom"}`} style={{ minHeight: i === 2 ? "53.5vh" : "49vh" }}>
                   {e.map((e, i) => {
                     return (
                       <div className={` carousel-item ${i === 0 ? "active" : ""} `} key={i}>
