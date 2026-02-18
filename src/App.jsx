@@ -50,7 +50,13 @@ function App() {
   }, []);
 
   return (
-    <Suspense fallback={<div>LOADING...</div>}>
+    <Suspense
+      fallback={
+        <div className="d-flex justify-content-center align-items-center vh-100 ">
+          <h1 className="display-1 text-danger">ELSOLITO</h1>
+        </div>
+      }
+    >
       <HashRouter>
         <div>
           <Landingscaping />
