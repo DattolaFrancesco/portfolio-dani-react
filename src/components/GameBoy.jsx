@@ -17,6 +17,8 @@ const GameBoy = () => {
   const blur = new Image();
   blur.src = "imgLanding/blur.gif";
   const btnUpRef = useRef(null);
+  const btnRightRef = useRef(null);
+  const btnLeftRef = useRef(null);
   const btnDownRef = useRef(null);
   const btnPushRef = useRef(null);
   const [image, setImage] = useState(images[0]);
@@ -85,6 +87,32 @@ const GameBoy = () => {
       >
         <img src="imgLanding/su.png" alt="" className="w-100 h-100" />
       </a>
+      {/* destro */}
+      <a
+        onClick={(e) => {
+          console.log(isloading.current);
+          if (!isloading.current) {
+            isloading.current = true;
+            e.preventDefault();
+            console.log(counter);
+            setCounter((prev) => prev + 1);
+          }
+        }}
+        ref={btnRightRef}
+        onTouchStart={() => {
+          btnRightRef.current.classList.add("custom-positionRight-touched");
+        }}
+        onTouchEnd={() => {
+          btnRightRef.current.classList.remove("custom-positionRight-touched");
+        }}
+        onTouchCancel={() => {
+          btnRightRef.current.classList.remove("custom-positionRight-touched");
+        }}
+        id="btnUp"
+        className="custom-positionRight position-absolute"
+      >
+        <img src="imgLanding/su.png" alt="" className="w-100 h-100" />
+      </a>
       <a
         onClick={(e) => {
           if (!isloading.current) {
@@ -106,6 +134,31 @@ const GameBoy = () => {
         }}
         id="btnDown"
         className="position-absolute custom-positionDown"
+      >
+        <img src="imgLanding/giu.png" alt="" className="w-100 h-100" />
+      </a>
+      {/* sinistro */}
+      <a
+        onClick={(e) => {
+          if (!isloading.current) {
+            isloading.current = true;
+            e.preventDefault();
+            console.log(counter);
+            setCounter((prev) => prev - 1);
+          }
+        }}
+        ref={btnLeftRef}
+        onTouchStart={() => {
+          (btnLeftRef.current.classList.add("custom-positionLeft-touched"), { passive: true });
+        }}
+        onTouchEnd={() => {
+          (btnLeftRef.current.classList.remove("custom-positionLeft-touched"), { passive: true });
+        }}
+        onTouchCancel={() => {
+          (btnLeftRef.current.classList.remove("custom-positionLeft-touched"), { passive: true });
+        }}
+        id="btnDown"
+        className="position-absolute custom-positionLeft"
       >
         <img src="imgLanding/giu.png" alt="" className="w-100 h-100" />
       </a>
