@@ -311,6 +311,21 @@ li {
   object-position: center;
   z-index: -1;
 }
+.steel-circleUp {
+  top: -7%;
+  width: 120%;
+  right: -11%;
+}
+.steel-circleDown {
+  top: -7%;
+  width: 120%;
+  right: -8%;
+}
+.steel-circlePush {
+  top: -5%;
+  width: 120%;
+  right: -8.6%;
+}
 #btn-tv-up {
   right: 8.7%;
   top: 36%;

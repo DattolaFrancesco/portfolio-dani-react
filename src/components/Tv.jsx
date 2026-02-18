@@ -83,6 +83,7 @@ const Tv = () => {
         }}
       >
         <img src="tv/btndirection.png" alt="btn direction tv" className="w-100" />
+        <img src="tv/FERRO_PUSH.png" alt="btn direction tv" className=" position-absolute steel-circleUp" />
       </a>
       <a
         ref={btnDownRef}
@@ -108,6 +109,7 @@ const Tv = () => {
       >
         {" "}
         <img className="rotate-btn-tv w-100" src="tv/btndirection.png" alt="btn direction tv" />
+        <img src="tv/FERRO_PUSH.png" alt="btn direction tv" className=" position-absolute steel-circleDown" />
       </a>
       <a
         ref={btnPushRef}
@@ -133,6 +135,7 @@ const Tv = () => {
           src="tv/btntv.png"
           alt="btn push tv"
         />
+        <img src="tv/FERRO_PUSH.png" alt="btn direction tv" className=" position-absolute steel-circlePush" />
       </a>
     </section>
   );
