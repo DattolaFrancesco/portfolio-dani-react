@@ -58,14 +58,7 @@ const Tv = () => {
   return (
     <section id="tv" className="size-custom position-relative">
       <img src="tv/Tvnobtn.webp" alt="tv" loading="lazy" decoding="async" draggable="false" className="size-custom" />
-      <img
-        src={`${image ? image : "imgLanding/blur.gif"}`}
-        alt=""
-        loading="lazy"
-        decoding="async"
-        draggable="false"
-        className="position-absolute  custom-tv-size"
-      />
+      <img src={`${image ? image : "imgLanding/blur.gif"}`} alt="" loading="lazy" draggable="false" className="position-absolute  custom-tv-size" />
       <a
         ref={btnUpRef}
         onClick={(e) => {
