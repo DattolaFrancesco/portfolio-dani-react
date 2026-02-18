@@ -71,7 +71,7 @@ img {
 
 .bg-custom {
   position: relative;
-  min-height: 100dvh;
+  min-height: 100svh;
   overflow: hidden;
 }
 .bg-custom::before {
