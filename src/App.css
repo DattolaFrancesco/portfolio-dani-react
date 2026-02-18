@@ -80,6 +80,7 @@ img {
   left: 0;
   width: 100%;
   height: 100vh;
+  top: -5vh;
   z-index: -1;
   background-image: url("/imgLanding/Verticale_Senza.png");
   background-position: center;
@@ -413,7 +414,7 @@ li {
 
   .bg-custom::before {
     content: "";
-    top: 0.1%;
+    top: -5vh;
   }
   .w-custom-info-cell {
     width: 50%;
