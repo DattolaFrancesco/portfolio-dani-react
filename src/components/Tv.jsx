@@ -18,6 +18,9 @@ const Tv = () => {
   const [image, setImage] = useState(images[0]);
   const [counter, setCounter] = useState(0);
   const isloading = useRef(false);
+  const btnUpRef = useRef(null);
+  const btnDownRef = useRef(null);
+  const btnPushRef = useRef(null);
   const counterControll = () => {
     if (counter < 0) setCounter(5);
   };
@@ -57,6 +60,7 @@ const Tv = () => {
       <img src="tv/Tvnobtn.webp" alt="" className="size-custom" />
       <img src={`${image ? image : "imgLanding/blur.gif"}`} alt="" className="position-absolute  custom-tv-size" />
       <a
+        ref={btnUpRef}
         onClick={(e) => {
           console.log(isloading.current);
           if (!isloading.current) {
@@ -67,11 +71,21 @@ const Tv = () => {
           }
         }}
         id="btn-tv-up"
-        className="position-absolute  "
+        className="position-absolute "
+        onTouchStart={() => {
+          btnUpRef.current.classList.add("custom-position-touched-tv");
+        }}
+        onTouchEnd={() => {
+          btnUpRef.current.classList.remove("custom-position-touched-tv");
+        }}
+        onTouchCancel={() => {
+          btnUpRef.current.classList.remove("custom-position-touched-tv");
+        }}
       >
         <img src="tv/btndirection.png" alt="btn direction tv" className="w-100" />
       </a>
       <a
+        ref={btnDownRef}
         onClick={(e) => {
           if (!isloading.current) {
             isloading.current = true;
@@ -82,17 +96,36 @@ const Tv = () => {
         }}
         id="btn-tv-down"
         className="position-absolute  "
+        onTouchStart={() => {
+          btnDownRef.current.classList.add("custom-position-touched-tv");
+        }}
+        onTouchEnd={() => {
+          btnDownRef.current.classList.remove("custom-position-touched-tv");
+        }}
+        onTouchCancel={() => {
+          btnDownRef.current.classList.remove("custom-position-touched-tv");
+        }}
       >
         {" "}
         <img className="rotate-btn-tv w-100" src="tv/btndirection.png" alt="btn direction tv" />
       </a>
       <a
+        ref={btnPushRef}
         onClick={(e) => {
           e.preventDefault();
           pushWork(counter);
         }}
         id="btn-tv-push"
         className="position-absolute"
+        onTouchStart={() => {
+          btnDownRef.current.classList.add("custom-position-touched-tv");
+        }}
+        onTouchEnd={() => {
+          btnDownRef.current.classList.remove("custom-position-touched-tv");
+        }}
+        onTouchCancel={() => {
+          btnDownRef.current.classList.remove("custom-position-touched-tv");
+        }}
       >
         <img
           className=" 

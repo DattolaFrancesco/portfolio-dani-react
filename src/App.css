@@ -119,6 +119,11 @@ img {
   font-weight: 700;
   color: rgb(232, 37, 41);
 }
+/* tv btns */
+.custom-position-touched-tv {
+  transform: translateY(2%);
+}
+/* tv btns end */
 .custom-positionUp {
   top: 55.4%;
   left: 21.5%;
@@ -312,17 +317,26 @@ li {
   width: 6%;
   height: 9%;
 }
+#btn-tv-up:active {
+  transform: translateY(2%);
+}
 #btn-tv-down {
   right: 8.7%;
   top: 51.5%;
   width: 6%;
   height: 9%;
 }
+#btn-tv-down:active {
+  transform: translateY(2%);
+}
 #btn-tv-push {
   right: 8.7%;
   bottom: 20%;
   width: 6%;
   height: 9%;
+}
+#btn-tv-push:active {
+  transform: translateY(2%);
 }
 .w-custom-tv-works {
   width: 45vh;
