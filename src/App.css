@@ -327,8 +327,9 @@ li {
 .vh-custom-singleW {
   width: 80vh;
 }
-.mb-custom-singlew {
+.m-custom-singlew {
   margin-bottom: 1rem;
+  margin-top: 10rem;
 }
 /* media query  */
 @media screen and (min-width: 480px) {
@@ -492,6 +493,11 @@ li {
   }
   .left-info-tv {
     left: 3%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .w-custom-info-cell-desktop {
+    width: 30%;
   }
 }
 

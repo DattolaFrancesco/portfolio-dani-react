@@ -27,7 +27,7 @@ const SingleWorksTv = () => {
     const ctx = gsap.context(() => {
       const panels = gsap.utils.toArray(".panel");
       gsap.to(panels, {
-        xPercent: -100 * (panels.length - 2),
+        xPercent: -100 * (panels.length - 1),
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
@@ -63,17 +63,17 @@ const SingleWorksTv = () => {
           );
         })}
       </section>
-      <Row ref={secondPanel} className="min-vh-100 gap-1 gap-lg-5  justify-content-center align-items-center mt-3 mb-custom-singlew">
+      <Row ref={secondPanel} className="min-vh-100 gap-1 gap-lg-5  justify-content-center align-items-center m-custom-singlew">
         {works01.map((works, i) => {
           return (
-            <Col sm={3} lg={2} xl={1} key={i / 3} className="px-0">
+            <Col sm={4} md={3} lg={2} xl={1} key={i / 3} className="px-0">
               <img src={works} alt="" className="w-100" />
             </Col>
           );
         })}
       </Row>
 
-      <div ref={bottomRef} style={{ height: "50vh" }} />
+      <div ref={bottomRef} style={{ height: "30vh" }} />
     </>
   );
 };
