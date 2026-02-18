@@ -29,7 +29,7 @@ const NavBar = () => {
         }}
         style={{ cursor: "pointer" }}
       >
-        <img src="/imgLanding/Cuore.webp" alt="Logo" decoding="async" draggable="false" fetchPriority="high" />
+        <img src="/imgLanding/Cuore.webp" alt="Logo" decoding="async" draggable="false" />
       </a>
 
       <div className="list-unstyled d-flex align-items-center mb-0 bg-glass rounded-pill px-2 w-max-content gap-3 py-2">
