@@ -284,7 +284,9 @@ li {
   animation: moveP 3s infinite;
   animation-delay: 3s;
 }
-
+.lh-sm-custom {
+  line-height: 1.1;
+}
 .gap-custom-info {
   gap: 5rem;
 }
@@ -348,19 +350,27 @@ li {
 #btn-tv-push:active {
   transform: translateY(2%);
 }
-.w-custom-tv-works {
-  width: 45vh;
+.min-vh-90 {
+  min-height: 70vh;
 }
-.m-custom-works-tv {
-  margin-top: 6vh;
-  margin-inline: 5%;
+.mb-custom-tv-works {
+  margin-bottom: 15vh;
 }
-.gap-works-tv {
-  gap: 10vh;
+.loop-wrapper {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
-.mb-works-tv {
-  margin-bottom: 20vh;
+
+.loop-track {
+  display: flex;
+  flex-direction: column;
 }
+
+.loop-track > .row {
+  min-height: 90vh;
+}
+
 .rotate-btn-tv {
   rotate: 180deg;
 }
@@ -377,7 +387,15 @@ li {
   margin-bottom: 1rem;
   margin-top: 10rem;
 }
-.custom-positionRight-touched {
+.custom-title-tv-position {
+  position: absolute;
+  color: black;
+  top: 0;
+  width: 100%;
+  left: 105%;
+  text-align: end;
+  text-align: end;
+  opacity: 0.25;
 }
 /* media query  */
 @media screen and (min-width: 480px) {
@@ -436,9 +454,6 @@ li {
     height: 90vh;
     background-image: url("/imgLanding/Orizzontale_Senza.png");
     background-position: center;
-  }
-  .gap-works-tv {
-    gap: 15vh;
   }
   .w-custom-tv-works {
     width: 50vh;
