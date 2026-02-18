@@ -311,6 +311,9 @@ li {
   object-position: center;
   z-index: -1;
 }
+.cursor-pointer-tv {
+  cursor: pointer;
+}
 .steel-circleUp {
   top: -7%;
   width: 120%;

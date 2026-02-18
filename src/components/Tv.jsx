@@ -71,7 +71,7 @@ const Tv = () => {
           }
         }}
         id="btn-tv-up"
-        className="position-absolute "
+        className="position-absolute cursor-pointer-tv"
         onTouchStart={() => {
           btnUpRef.current.classList.add("custom-position-touched-tv");
         }}
@@ -96,7 +96,7 @@ const Tv = () => {
           }
         }}
         id="btn-tv-down"
-        className="position-absolute  "
+        className="position-absolute  cursor-pointer-tv"
         onTouchStart={() => {
           btnDownRef.current.classList.add("custom-position-touched-tv");
         }}
@@ -118,7 +118,7 @@ const Tv = () => {
           pushWork(counter);
         }}
         id="btn-tv-push"
-        className="position-absolute"
+        className="position-absolute cursor-pointer-tv"
         onTouchStart={() => {
           btnDownRef.current.classList.add("custom-position-touched-tv");
         }}
