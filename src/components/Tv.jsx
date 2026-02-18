@@ -57,8 +57,15 @@ const Tv = () => {
 
   return (
     <section id="tv" className="size-custom position-relative">
-      <img src="tv/Tvnobtn.webp" alt="" className="size-custom" />
-      <img src={`${image ? image : "imgLanding/blur.gif"}`} alt="" className="position-absolute  custom-tv-size" />
+      <img src="tv/Tvnobtn.webp" alt="tv" loading="lazy" decoding="async" draggable="false" className="size-custom" />
+      <img
+        src={`${image ? image : "imgLanding/blur.gif"}`}
+        alt=""
+        loading="lazy"
+        decoding="async"
+        draggable="false"
+        className="position-absolute  custom-tv-size"
+      />
       <a
         ref={btnUpRef}
         onClick={(e) => {
@@ -82,8 +89,8 @@ const Tv = () => {
           btnUpRef.current.classList.remove("custom-position-touched-tv");
         }}
       >
-        <img src="tv/btndirection.png" alt="btn direction tv" className="w-100" />
-        <img src="tv/FERRO_PUSH.png" alt="btn direction tv" className=" position-absolute steel-circleUp" />
+        <img src="tv/btndirection.png" alt="btn direction tv" loading="lazy" decoding="async" draggable="false" className="w-100" />
+        <img src="tv/FERRO_PUSH.png" alt="btn direction tv" loading="lazy" decoding="async" draggable="false" className=" position-absolute steel-circleUp" />
       </a>
       <a
         ref={btnDownRef}
@@ -108,8 +115,8 @@ const Tv = () => {
         }}
       >
         {" "}
-        <img className="rotate-btn-tv w-100" src="tv/btndirection.png" alt="btn direction tv" />
-        <img src="tv/FERRO_PUSH.png" alt="btn direction tv" className=" position-absolute steel-circleDown" />
+        <img className="rotate-btn-tv w-100" src="tv/btndirection.png" alt="btn direction tv" loading="lazy" decoding="async" draggable="false" />
+        <img src="tv/FERRO_PUSH.png" alt="btn direction tv" loading="lazy" decoding="async" draggable="false" className=" position-absolute steel-circleDown" />
       </a>
       <a
         ref={btnPushRef}
@@ -135,7 +142,7 @@ const Tv = () => {
           src="tv/btntv.png"
           alt="btn push tv"
         />
-        <img src="tv/FERRO_PUSH.png" alt="btn direction tv" className=" position-absolute steel-circlePush" />
+        <img src="tv/FERRO_PUSH.png" alt="btn direction tv" loading="lazy" decoding="async" draggable="false" className=" position-absolute steel-circlePush" />
       </a>
     </section>
   );

@@ -63,7 +63,7 @@ const WorksTv = () => {
                     to={`/WorksTv/${tagRelocation[i]}`}
                     className={`d-block w-100 h-100 align-items-center w-custom-tv-works z-3 flex-shrink-0 panel ${i !== 2 ? "shadow-custom" : ""} position-relative`}
                   >
-                    <img src={e} alt="foto" className="w-100" />
+                    <img src={e} alt="foto" loading="lazy" decoding="async" draggable="false" className="w-100" />
                   </Link>
                 </Col>
                 <Col className="col-3">

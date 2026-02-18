@@ -82,7 +82,7 @@ img {
   height: 100vh;
   top: -5vh;
   z-index: -1;
-  background-image: url("/imgLanding/Verticale_Senza.png");
+  background-image: url("/imgLanding/Verticale_Senza.webp");
   background-position: center;
   background-size: 100% auto;
   background-repeat: no-repeat;
@@ -452,7 +452,7 @@ li {
     content: "";
     top: 0%;
     height: 90vh;
-    background-image: url("/imgLanding/Orizzontale_Senza.png");
+    background-image: url("/imgLanding/Orizzontale_Senza.webp");
     background-position: center;
   }
   .w-custom-tv-works {
@@ -473,7 +473,7 @@ li {
   .bg-custom::before {
     content: "";
     top: 2%;
-    background-image: url("/imgLanding/Orizzontale_Senza.png");
+    background-image: url("/imgLanding/Orizzontale_Senza.webp");
     background-position: center;
 
     background-size: contain;

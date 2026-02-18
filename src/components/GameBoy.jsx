@@ -6,12 +6,12 @@ const GameBoy = () => {
   console.log(location.hash);
   const navigate = useNavigate();
   const images = [
-    "/imgLanding/QUEIO_1.png",
-    "/imgLanding/CHARACTER_2.png",
-    "/imgLanding/3_LETTERING.png",
+    "/imgLanding/QUEIO_1.webp",
+    "/imgLanding/CHARACTER_2.webp",
+    "/imgLanding/3_LETTERING.webp",
     "/imgLanding/4_Vetrina.png",
-    "/imgLanding/5_POPUP.png",
-    "/imgLanding/MISC_6.png",
+    "/imgLanding/5_POPUP.webp",
+    "/imgLanding/MISC_6.webp",
   ];
   const tagRelocation = ["01Queio", "02Character", "03Lettering", "04Vetrina", "05Popup", "06Misc"];
   const blur = new Image();
@@ -60,8 +60,8 @@ const GameBoy = () => {
   }, [location]);
   return (
     <section id="game-boy" className="position-relative">
-      <img id="worksDisplayer" src="imgLanding/GAMEBOYOFFICIAL.webp" alt="" className="size-custom" />
-      <img id="worksPhoto" src={image} alt="" className="position-absolute custom-gameboy-size" />
+      <img id="worksDisplayer" src="imgLanding/GAMEBOYOFFICIAL.webp" alt="gameboy" loading="lazy" decoding="async" draggable="false" className="size-custom" />
+      <img id="worksPhoto" src={image} alt="works" loading="lazy" decoding="async" draggable="false" className="position-absolute custom-gameboy-size" />
       <a
         onClick={(e) => {
           console.log(isloading.current);
@@ -85,7 +85,7 @@ const GameBoy = () => {
         id="btnUp"
         className="custom-positionUp position-absolute"
       >
-        <img src="imgLanding/su.png" alt="" className="w-100 h-100" />
+        <img src="imgLanding/su.png" alt="" loading="lazy" decoding="async" draggable="false" className="w-100 h-100" />
       </a>
       {/* destro */}
       <a
@@ -111,7 +111,7 @@ const GameBoy = () => {
         id="btnUp"
         className="custom-positionRight position-absolute"
       >
-        <img src="imgLanding/su.png" alt="" className="w-100 h-100 d-none" />
+        <img src="imgLanding/su.png" alt="" loading="lazy" decoding="async" draggable="false" className="w-100 h-100 d-none" />
       </a>
       <a
         onClick={(e) => {
@@ -135,7 +135,7 @@ const GameBoy = () => {
         id="btnDown"
         className="position-absolute custom-positionDown"
       >
-        <img src="imgLanding/giu.png" alt="" className="w-100 h-100" />
+        <img src="imgLanding/giu.png" alt="" loading="lazy" decoding="async" draggable="false" className="w-100 h-100" />
       </a>
       {/* sinistro */}
       <a
@@ -160,7 +160,7 @@ const GameBoy = () => {
         id="btnDown"
         className="position-absolute custom-positionLeft"
       >
-        <img src="imgLanding/giu.png" alt="" className="w-100 h-100 d-none" />
+        <img src="imgLanding/giu.png" alt="" loading="lazy" decoding="async" draggable="false" className="w-100 h-100 d-none" />
       </a>
       <a
         onClick={(e) => {
@@ -180,7 +180,7 @@ const GameBoy = () => {
         id="btnPush"
         className="position-absolute custom-push"
       >
-        <img src="imgLanding/PUSH.png" alt="" className="w-100 h-100" />
+        <img src="imgLanding/PUSH.png" loading="lazy" decoding="async" draggable="false" alt="" className="w-100 h-100" />
       </a>
     </section>
   );
