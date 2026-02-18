@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Col, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const works01 = [
   "/img-works01/1_QUEIO.webp",
@@ -14,8 +14,25 @@ const works01 = [
   "/img-works01/7_QUEIO.webp",
   "/img-works01/8_QUEIO.webp",
 ];
-
+const works02 = [
+  "/img-works02/1_CHARACTER.webp",
+  "/img-works02/2_CHARACTER.webp",
+  "/img-works02/3_CHARACTER.webp",
+  "/img-works02/4_CHARACTER.webp",
+  "/img-works02/5_CHARACTER.webp",
+  "/img-works02/6_CHARACTER.webp",
+  "/img-works02/7_CHARACTER.webp",
+  "/img-works02/8_CHARACTER.webp",
+];
+const works03 = ["/img-works03/1_LETTERING.webp", "/img-works03/2_LETTERING.webp"];
+const works04 = ["/img-works04/1_VETRINA.webp", "/img-works04/2_VETRINA.webp", "/img-works04/3_VETRINA.webp", "/img-works04/4_VETRINA.jpg"];
+const works05 = ["/img-works05/1_POPUP.webp", "/img-works05/2_POPUP.webp", "/img-works05/3_POPUP.webp", "/img-works05/4_POPUP.webp"];
+const works06 = ["/img-works06/5_MISC.webp", "/img-works06/1_MISC.jpg", "/img-works06/2_MISC.jpg", "/img-works06/3_MISC.jpg", "/img-works06/4_MISC.jpg"];
+const works = [works01, works02, works03, works04, works05, works06];
 const SingleWorksTv = () => {
+  const location = useLocation();
+  const path = parseFloat(location.pathname.slice(10, 11)) - 1;
+  console.log(path);
   const navigate = useNavigate();
   const containerRef = useRef(null);
   const secondPanel = useRef(null);
@@ -33,7 +50,7 @@ const SingleWorksTv = () => {
           trigger: containerRef.current,
           pin: true,
           scrub: 1,
-          end: () => "+=" + containerRef.current.offsetWidth * 3,
+          end: () => "+=" + containerRef.current.offsetWidth * (path === 2 ? 0.5 : 2),
         },
       });
 
@@ -48,14 +65,18 @@ const SingleWorksTv = () => {
           }
         },
       });
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 10);
     }, containerRef);
+
     return () => ctx.revert();
   }, [navigate]);
 
   return (
     <>
       <section ref={containerRef} className="d-flex align-items-center  flex-row overflow-hidden vh-100">
-        {works01.map((works, i) => {
+        {works[path].map((works, i) => {
           return (
             <div key={i} className="vh-custom-singleW flex-shrink-0 panel">
               <img src={works} alt="" className="w-100" />
@@ -64,7 +85,7 @@ const SingleWorksTv = () => {
         })}
       </section>
       <Row ref={secondPanel} className="min-vh-100 gap-1 gap-lg-5  justify-content-center align-items-center m-custom-singlew">
-        {works01.map((works, i) => {
+        {works[path].map((works, i) => {
           return (
             <Col sm={4} md={3} lg={2} xl={1} key={i / 3} className="px-0">
               <img src={works} alt="" className="w-100" />
