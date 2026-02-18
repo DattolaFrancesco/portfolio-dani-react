@@ -53,7 +53,7 @@ img {
 
 /* // header nav bar logo */
 .logo img {
-  height: clamp(60px, 5vw, 70px);
+  height: clamp(45px, 5vw, 70px);
 }
 
 /* //  section hero */
@@ -77,14 +77,13 @@ img {
 .bg-custom::before {
   content: "";
   position: fixed;
-  top: -100px;
   left: 0;
   width: 100%;
-  height: 95vh;
+  height: 100vh;
   z-index: -1;
   background-image: url("/imgLanding/Verticale_Senza.png");
-  background-position: 50% 80%;
-  background-size: 110% auto;
+  background-position: center;
+  background-size: 100% auto;
   background-repeat: no-repeat;
   animation: introBg 3s forwards;
 }
@@ -258,15 +257,7 @@ li {
 .underline::marker {
   display: none;
 }
-/* .underline::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 5%;
-  background-color: #000;
-} */
+
 .fw-custom-info {
   font-weight: 550;
 }
@@ -441,6 +432,7 @@ li {
   .bg-custom::before {
     content: "";
     top: 0%;
+    height: 90vh;
     background-image: url("/imgLanding/Orizzontale_Senza.png");
     background-position: center;
   }
@@ -467,9 +459,10 @@ li {
     top: 2%;
     background-image: url("/imgLanding/Orizzontale_Senza.png");
     background-position: center;
+
     background-size: contain;
 
-    background-position: 50% 80%;
+    background-position: center;
   }
 
   section.flex-column {

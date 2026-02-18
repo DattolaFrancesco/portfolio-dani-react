@@ -111,7 +111,7 @@ const GameBoy = () => {
         id="btnUp"
         className="custom-positionRight position-absolute"
       >
-        <img src="imgLanding/su.png" alt="" className="w-100 h-100" />
+        <img src="imgLanding/su.png" alt="" className="w-100 h-100 d-none" />
       </a>
       <a
         onClick={(e) => {
@@ -160,7 +160,7 @@ const GameBoy = () => {
         id="btnDown"
         className="position-absolute custom-positionLeft"
       >
-        <img src="imgLanding/giu.png" alt="" className="w-100 h-100" />
+        <img src="imgLanding/giu.png" alt="" className="w-100 h-100 d-none" />
       </a>
       <a
         onClick={(e) => {
