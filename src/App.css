@@ -368,12 +368,6 @@ li {
     content: "";
     top: 0.1%;
   }
-  .m-custom-works-tv {
-    margin-top: 0;
-  }
-  .gap-works-tv {
-    gap: 19vh;
-  }
   .w-custom-info-cell {
     width: 50%;
   }
