@@ -15,6 +15,7 @@ const WorksTv = () => {
   const navigate = useNavigate();
   const [width, setWidth] = useState(window.innerWidth);
   const getWork = () => {
+    if (!location.hash) return;
     window.scrollTo(0, 0);
     setTimeout(() => {
       let loc = location.hash;
@@ -27,7 +28,7 @@ const WorksTv = () => {
   };
   useEffect(() => {
     getWork();
-  }, [location]);
+  }, [location.hash]);
   useEffect(() => {
     window.scrollTo(0, 0);
     if (width < 768) navigate("/works");

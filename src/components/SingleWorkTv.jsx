@@ -50,7 +50,7 @@ const SingleWorksTv = () => {
           trigger: containerRef.current,
           pin: true,
           scrub: 1,
-          end: () => "+=" + containerRef.current.offsetWidth * (path === 2 ? 0.5 : 2),
+          end: () => "+=" + containerRef.current.offsetWidth * (path === 1 ? 5 : panels.length),
         },
       });
 
@@ -61,6 +61,7 @@ const SingleWorksTv = () => {
         onUpdate: (self) => {
           if (self.progress >= 0.99 && self.direction === 1) {
             ScrollTrigger.getAll().forEach((t) => t.kill());
+            console.log("ciao");
             navigate("/WorksTv");
           }
         },
