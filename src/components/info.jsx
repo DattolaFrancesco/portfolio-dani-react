@@ -12,8 +12,8 @@ const Info = () => {
     <>
       {width > 768 ? (
         <div id="info-cont" className="vh-custom-info">
-          <div className="fs-5 lh-sm fw-normal w-max-content moveUl position-absolute bottom-50 left-info-tv">
-            <h1 className="mb-4 display-4 fw-custom-info lh-1">
+          <div className=" lh-sm fw-normal w-max-content moveUl position-absolute bottom-50 left-info-tv">
+            <h1 className="mb-4 display-6 fw-custom-info lh-1">
               DANIELE
               <br /> <span className="underline position-relative">PIACENTILE</span>
             </h1>

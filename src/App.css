@@ -6,6 +6,7 @@
 }
 :root {
   --bs-carousel-indicator-active-bg: #ff0000;
+  --fs-xs: clamp(1.1rem, 1.2vw, 1.4rem);
   --fs-s: clamp(1.4rem, 1.6vw, 1.6rem);
   --fs-m: clamp(4rem, 4vw, 6rem);
   --fs-l: clamp(12rem, 6vw, 14rem);
@@ -15,11 +16,6 @@ html,
 body {
   touch-action: manipulation;
   overflow-x: hidden;
-  font:
-    var(--fs-s)/var(--fs-s) mattone,
-    Arial,
-    sans-serif;
-  overflow-wrap: break-word;
 }
 button,
 a {
@@ -30,6 +26,23 @@ img {
   -webkit-user-select: none;
   user-select: none;
   -webkit-touch-callout: none;
+}
+
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+div,
+input,
+button {
+  font:
+    var(--fs-xs) / var(--fs-xs) mattone,
+    Arial,
+    sans-serif;
+  overflow-wrap: break-word;
+  text-decoration: none;
 }
 .w-custom-navbar {
   width: 95%;
@@ -101,7 +114,7 @@ img {
 .marquee-track h1 {
   white-space: nowrap;
   margin-right: 2rem;
-  font-size: 5rem;
+  font-size: 4rem !important;
   letter-spacing: -8px;
   font-weight: 700;
   color: rgb(232, 37, 41);
@@ -246,9 +259,6 @@ li {
   display: none;
 }
 
-.fw-custom-info {
-  font-weight: 550;
-}
 .scrollP {
   rotate: 270deg;
   transform-origin: top right;
@@ -518,7 +528,7 @@ li {
   }
 
   .marquee-track h1 {
-    font-size: 6rem;
+    font-size: 4rem !important;
     margin-bottom: 0;
   }
   .marquee-track:hover {
