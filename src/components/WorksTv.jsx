@@ -47,14 +47,14 @@ const WorksTv = () => {
 
       setTimeout(() => {
         isAnimating.current = false;
-      }, 400);
+      }, 600);
     };
 
     const obs = Observer.create({
       target: window,
       type: "wheel,touch,pointer",
       wheelSpeed: 0.5,
-      tolerance: 50,
+      tolerance: 300,
       onUp: () => {
         if (!isAnimating.current) handleStep(-1);
       },
@@ -70,7 +70,7 @@ const WorksTv = () => {
   useEffect(() => {
     gsap.fromTo(
       contentRef.current,
-      { opacity: 0, y: 20 },
+      { opacity: 0, y: 100 },
       {
         opacity: 1,
         y: 0,
