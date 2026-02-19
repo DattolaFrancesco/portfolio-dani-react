@@ -81,6 +81,7 @@ const GameBoy = () => {
             transition: "opacity 0.2s ease-in-out",
           }}
         >
+          <source src="/imgLanding/blur.webm" type="video/webm" />
           <source src="/imgLanding/blur.mp4" type="video/mp4" />
         </video>
       </div>
