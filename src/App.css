@@ -2,11 +2,32 @@
 :root {
   --bs-carousel-indicator-active-bg: #ff0000;
 }
+html,
+body {
+  touch-action: manipulation;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+button,
+a {
+  touch-action: manipulation;
+}
+img {
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
 .w-custom-navbar {
   width: 95%;
 }
 .animationNav {
   animation: introNav 3s forwards;
+}
+.bg-body {
+  position: relative;
+  min-height: 100%;
+  background: none;
 }
 
 /* // nav bar */
@@ -25,6 +46,21 @@
 /* //  section hero */
 /* // section gameboy */
 
+.custom-gameboy-size {
+  top: 9%;
+  left: 5%;
+  width: 90.5%;
+  height: 37%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+.bg-custom {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+}
 .size-custom {
   width: 100vw;
   height: 100lvh;
@@ -84,7 +120,15 @@
   background-color: transparent;
   rotate: 90deg;
 }
-
+.custom-positionRight-touched {
+  transform: translateY(-5%);
+}
+.custom-positionLeft-touched {
+  transform: translateY(5%);
+}
+.custom-positionUp-touched {
+  transform: translateY(-5%);
+}
 .custom-positionDown {
   top: 67.2%;
   left: 21.5%;
@@ -93,6 +137,9 @@
   background-color: transparent;
 }
 
+.custom-positionDown-touched {
+  transform: translateY(5%);
+}
 .custom-push {
   top: 61%;
   height: 11.2%;
@@ -249,7 +296,33 @@ li {
   width: 120%;
   right: -8.6%;
 }
-
+#btn-tv-up {
+  right: 8.7%;
+  top: 36%;
+  width: 6%;
+  height: 9%;
+}
+#btn-tv-up:active {
+  transform: translateY(2%);
+}
+#btn-tv-down {
+  right: 8.7%;
+  top: 51.5%;
+  width: 6%;
+  height: 9%;
+}
+#btn-tv-down:active {
+  transform: translateY(2%);
+}
+#btn-tv-push {
+  right: 8.7%;
+  bottom: 20%;
+  width: 6%;
+  height: 9%;
+}
+#btn-tv-push:active {
+  transform: translateY(2%);
+}
 .min-vh-90 {
   min-height: 70vh;
 }
@@ -503,7 +576,6 @@ li {
     transform: translateX(0);
   }
 }
-
 @keyframes moveUl {
   from {
     transform: translateX(-150%);
