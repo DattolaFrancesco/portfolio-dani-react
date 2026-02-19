@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { Col, Row } from "react-bootstrap";
 import { useLocation, useNavigate } from "react-router-dom";
+gsap.registerPlugin(ScrollTrigger);
 
 const works01 = [
   "/img-works01/1_QUEIO.webp",
@@ -39,8 +40,6 @@ const SingleWorksTv = () => {
   const bottomRef = useRef(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
     const ctx = gsap.context(() => {
       const panels = gsap.utils.toArray(".panel");
       gsap.to(panels, {
@@ -49,6 +48,8 @@ const SingleWorksTv = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           pin: true,
+          pinSpacing: true,
+          anticipatePin: 1,
           scrub: 1,
           end: () => "+=" + containerRef.current.offsetWidth * (path === 1 ? 5 : panels.length),
         },
@@ -60,8 +61,6 @@ const SingleWorksTv = () => {
         end: "bottom bottom",
         onUpdate: (self) => {
           if (self.progress >= 0.99 && self.direction === 1) {
-            ScrollTrigger.getAll().forEach((t) => t.kill());
-            console.log("ciao");
             navigate("/WorksTv");
           }
         },
@@ -71,31 +70,36 @@ const SingleWorksTv = () => {
       }, 10);
     }, containerRef);
 
-    return () => ctx.revert();
-  }, [navigate]);
+    return () => {
+      ctx.revert();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, [navigate, path]);
 
   return (
     <>
-      <section ref={containerRef} className="d-flex align-items-center  flex-row overflow-hidden vh-100">
-        {works[path].map((works, i) => {
-          return (
-            <div key={i} className="vh-custom-singleW flex-shrink-0 panel">
-              <img src={works} alt="" className="w-100" />
-            </div>
-          );
-        })}
-      </section>
-      <Row ref={secondPanel} className="min-vh-100 gap-1 gap-lg-5  justify-content-center align-items-center m-custom-singlew">
-        {works[path].map((works, i) => {
-          return (
-            <Col sm={4} md={3} lg={2} xl={1} key={i / 3} className="px-0">
-              <img src={works} alt="" className="w-100" />
-            </Col>
-          );
-        })}
-      </Row>
+      <div>
+        <section ref={containerRef} className="d-flex align-items-center  flex-row overflow-hidden vh-100">
+          {works[path].map((works, i) => {
+            return (
+              <div key={i} className="vh-custom-singleW flex-shrink-0 panel">
+                <img src={works} alt="" className="w-100" />
+              </div>
+            );
+          })}
+        </section>
+        <Row ref={secondPanel} className="min-vh-100 gap-1 gap-lg-5  justify-content-center align-items-center m-custom-singlew">
+          {works[path].map((works, i) => {
+            return (
+              <Col sm={4} md={3} lg={2} xl={1} key={i / 3} className="px-0">
+                <img src={works} alt="" className="w-100" />
+              </Col>
+            );
+          })}
+        </Row>
 
-      <div ref={bottomRef} style={{ height: "30vh" }} />
+        <div ref={bottomRef} style={{ height: "30vh" }} />
+      </div>
     </>
   );
 };

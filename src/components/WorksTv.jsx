@@ -1,44 +1,80 @@
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Col, Row } from "react-bootstrap";
-import { Link, useLocation, useNavigate, Routes, Route } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import gsap from "gsap";
+import { Observer } from "gsap/Observer";
+
+gsap.registerPlugin(Observer);
 
 const WorksTv = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location.hash.slice(2, 3));
+  const locationCounter = parseFloat(location.hash.slice(2, 3)) - 1;
+
   const works = [
     "img-works01/1_QUEIO.webp",
-    "img-works03/1_LETTERING.webp",
     "img-works02/1_CHARACTER.webp",
+    "img-works03/1_LETTERING.webp",
     "img-works04/1_VETRINA.webp",
     "img-works05/1_POPUP.webp",
     "img-works06/5_MISC.webp",
   ];
-  const tagRelocation = ["01Queio", "03Lettering", "02Character", "04Vetrina", "05Popup", "06Misc"];
-  const h2S = ["QUEIO", "LETTERING", "CHARACTER DESIGN", "WINDOW DISPLAYS", "POP-UP", "MISC"];
+  const tagRelocation = ["01Queio", "02Character", "03Lettering", "04Vetrina", "05Popup", "06Misc"];
+  const h2S = ["QUEIO", "CHARACTER DESIGN", "LETTERING", "WINDOW DISPLAYS", "POP-UP", "MISC"];
   const descriptions = [
-    "Visual content and graphic posts created for Queio Store, including Instagram posts and t-shirt garphics.",
-    "Explorations lettering, featuring custom alpjhabets, expressive letterforms and experimental sketches.",
+    "Visual content and graphic posts created for Queio Store, including Instagram posts and t-shirt graphics.",
     "Character design explorations focused on expressive shapes and personality.",
-    "Window display designs developed to creare strong visual impact and storytelling for retail spaces...",
+    "Explorations lettering, featuring custom alphabets, expressive letterforms and experimental sketches.",
+    "Window display designs developed to create strong visual impact and storytelling for retail spaces...",
     "Live spray painting pop-up event featuring on-site T-shirt customization and an exhibition of original canvases.",
     "Misc random works.",
   ];
-  const navigate = useNavigate();
+
+  const [counter, setCounter] = useState(0);
   const [width, setWidth] = useState(window.innerWidth);
-  const getWork = () => {
-    if (!location.hash) return;
-    window.scrollTo(0, 0);
-    setTimeout(() => {
-      let loc = location.hash;
-      const id = loc.replace("#", "");
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 500);
-  };
+  const contentRef = useRef(null);
+  const isAnimating = useRef(false);
   useEffect(() => {
-    getWork();
-  }, [location.hash]);
+    if (location.hash) setCounter(locationCounter);
+  }, []);
+  useEffect(() => {
+    const total = works.length;
+
+    const obs = Observer.create({
+      target: window,
+      type: "wheel,touch,pointer",
+      onUp: () => {
+        if (isAnimating.current) return;
+        setCounter((prev) => (prev - 1 + total) % total);
+      },
+      onDown: () => {
+        if (isAnimating.current) return;
+        setCounter((prev) => (prev + 1) % total);
+      },
+      tolerance: 10,
+      preventDefault: true,
+    });
+
+    return () => obs.kill();
+  }, [works.length]);
+  useEffect(() => {
+    console.log(counter);
+    isAnimating.current = true;
+    gsap.fromTo(
+      contentRef.current,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power2.out",
+        onComplete: () => {
+          isAnimating.current = false;
+        },
+      },
+    );
+  }, [counter]);
   useEffect(() => {
     window.scrollTo(0, 0);
     if (width < 768) navigate("/works");
@@ -47,44 +83,36 @@ const WorksTv = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [width]);
-  return (
-    <>
-      <Row className="gap-5 justify-content-around align-items-center mb-custom-tv-works">
-        {works.map((e, i) => {
-          return (
-            <Fragment key={i}>
-              <div id={tagRelocation[i]} />
-              <Row className={`"w-100 justify-content-around align-items-center ${i === 0 ? "min-vh-90" : ""}`}>
-                <Col className="col-3">
-                  <p className="fs-1 text-start lh-sm-custom"> {h2S[i]}</p>
-                </Col>
-                <Col className="col-4">
-                  <Link
-                    to={`/WorksTv/${tagRelocation[i]}`}
-                    className={`d-block w-100 h-100 align-items-center w-custom-tv-works z-3 flex-shrink-0 panel ${i !== 2 ? "shadow-custom" : ""} position-relative`}
-                  >
-                    <img src={e} alt="foto" loading="lazy" decoding="async" draggable="false" className="w-100" />
-                  </Link>
-                </Col>
-                <Col className="col-3">
-                  {" "}
-                  <p className="text-center fs-6 lh-sm-custom">{descriptions[i]}</p>
-                </Col>
-              </Row>
-            </Fragment>
-          );
-        })}
-      </Row>
 
-      <div className="marquee position-fixed bottom-0 z-0">
+  return (
+    <div className="vh-100 overflow-hidden">
+      <div ref={contentRef} className="h-100 z-3 position-relative">
+        <Row className="w-100 justify-content-around align-items-center min-vh-100 m-0">
+          <Col className="col-3">
+            <p className="fs-1 text-start lh-sm-custom uppercase font-weight-bold">{h2S[counter]}</p>
+          </Col>
+
+          <Col className="col-4">
+            <Link to={`/WorksTv/${tagRelocation[counter]}`} className={"d-block w-100 h-100 align-items-center z-3 panel position-relative"}>
+              <img src={works[counter]} alt={h2S[counter]} className={`w-100  rounded   ${counter !== 1 ? " shadow-custom " : ""} `} draggable="false" />
+            </Link>
+          </Col>
+
+          <Col className="col-3">
+            <p className="text-center fs-6 lh-sm-custom">{descriptions[counter]}</p>
+          </Col>
+        </Row>
+      </div>
+
+      {/* Marquee fisso */}
+      <div className="marquee position-fixed bottom-0 ">
         <div className="marquee-track">
-          <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
-          <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
-          <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
-          <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
+          <h1>ILLUSTRATOR AND GRAPHIC AND - </h1>
+          <h1>ILLUSTRATOR AND GRAPHIC AND - </h1>
         </div>
       </div>
-    </>
+    </div>
   );
 };
+
 export default WorksTv;

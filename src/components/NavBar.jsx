@@ -41,14 +41,14 @@ const NavBar = () => {
             to={location.pathname === "/WorksTv" ? "/#tv" : "/WorksTv"}
             className={`nav-link fw-bold px-2 rounded-pill ${location.pathname === "/WorksTv" || location.pathname === "/works" ? "selector" : ""}`}
           >
-            {location.pathname === "/WorksTv" ? "TV" : "WORKS"}
+            WORKS
           </Link>
         ) : (
           <Link
             to={location.pathname === "/works" ? "/#game-boy" : "/works"}
             className={`nav-link fw-bold px-2 rounded-pill ${location.pathname === "/works" ? "selector" : ""}`}
           >
-            {location.pathname === "/works" ? "GAMEBOY" : "WORKS"}
+            WORKS
           </Link>
         )}
 

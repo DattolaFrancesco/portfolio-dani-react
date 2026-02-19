@@ -42,15 +42,12 @@ const Works = () => {
   let counter = 0;
   const location = useLocation();
   const getWork = () => {
-    window.scrollTo(0, 0);
-    setTimeout(() => {
-      let loc = location.hash;
-      const id = loc.replace("#", "");
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 500);
+    let loc = location.hash;
+    const id = loc.replace("#", "");
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
   };
   useEffect(() => {
     getWork();
