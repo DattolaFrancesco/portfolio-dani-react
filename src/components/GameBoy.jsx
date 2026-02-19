@@ -107,7 +107,7 @@ const GameBoy = () => {
         id="btnUp"
         className="custom-positionUp position-absolute"
       >
-        <img src="imgLanding/su.png" alt="" loading="lazy" decoding="async" draggable="false" className="w-100 h-100" />
+        <img src="imgLanding/su.webp" alt="" loading="lazy" decoding="async" draggable="false" className="w-100 h-100" />
       </a>
       {/* destro */}
       <a
@@ -133,7 +133,7 @@ const GameBoy = () => {
         id="btnUp"
         className="custom-positionRight position-absolute"
       >
-        <img src="imgLanding/su.png" alt="" loading="lazy" decoding="async" draggable="false" className="w-100 h-100 d-none" />
+        <img src="imgLanding/su.webp" alt="" loading="lazy" decoding="async" draggable="false" className="w-100 h-100 d-none" />
       </a>
       <a
         onClick={(e) => {
@@ -157,7 +157,7 @@ const GameBoy = () => {
         id="btnDown"
         className="position-absolute custom-positionDown"
       >
-        <img src="imgLanding/giu.png" alt="" loading="lazy" decoding="async" draggable="false" className="w-100 h-100" />
+        <img src="imgLanding/giu.webp" alt="" loading="lazy" decoding="async" draggable="false" className="w-100 h-100" />
       </a>
       {/* sinistro */}
       <a
@@ -181,9 +181,7 @@ const GameBoy = () => {
         }}
         id="btnDown"
         className="position-absolute custom-positionLeft"
-      >
-        <img src="imgLanding/giu.png" alt="" loading="lazy" decoding="async" draggable="false" className="w-100 h-100 d-none" />
-      </a>
+      ></a>
       <a
         onClick={(e) => {
           e.preventDefault();
@@ -202,7 +200,7 @@ const GameBoy = () => {
         id="btnPush"
         className="position-absolute custom-push"
       >
-        <img src="imgLanding/PUSH.png" loading="lazy" decoding="async" draggable="false" alt="" className="w-100 h-100" />
+        <img src="imgLanding/PUSH.webp" loading="lazy" decoding="async" draggable="false" alt="" className="w-100 h-100" />
       </a>
     </section>
   );
