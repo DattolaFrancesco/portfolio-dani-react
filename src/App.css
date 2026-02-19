@@ -293,6 +293,9 @@ li {
 .lh-sm-custom {
   line-height: 1.1;
 }
+.lh-sm-custom-info {
+  line-height: 0.9;
+}
 .gap-custom-info {
   gap: 5rem;
 }
