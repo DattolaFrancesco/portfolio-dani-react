@@ -3,7 +3,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const GameBoy = () => {
   const location = useLocation();
-  console.log(location.hash);
   const navigate = useNavigate();
   const images = [
     "/imgLanding/QUEIO_12.webp",
@@ -35,18 +34,10 @@ const GameBoy = () => {
       scrollTo(0, 0);
     }
   };
-  useEffect(() => {
-    images.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, []);
   const changeImg = (n) => {
     setShowVideo(true);
-
     setTimeout(() => {
       setImage(images[n]);
-
       setTimeout(() => {
         setShowVideo(false);
         isloading.current = false;
@@ -62,6 +53,12 @@ const GameBoy = () => {
   useEffect(() => {
     redirect();
   }, [location]);
+  useEffect(() => {
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
   return (
     <section id="game-boy" className="position-relative">
       <img id="worksDisplayer" src="imgLanding/GAMEBOYOFFICIAL.webp" alt="gameboy" decoding="async" draggable="false" className="size-custom" />
@@ -87,11 +84,9 @@ const GameBoy = () => {
       </div>
       <a
         onClick={(e) => {
-          console.log(isloading.current);
           if (!isloading.current) {
             isloading.current = true;
             e.preventDefault();
-            console.log(counter);
             setCounter((prev) => (prev + 1) % images.length);
           }
         }}
@@ -113,11 +108,9 @@ const GameBoy = () => {
       {/* destro */}
       <a
         onClick={(e) => {
-          console.log(isloading.current);
           if (!isloading.current) {
             isloading.current = true;
             e.preventDefault();
-            console.log(counter);
             setCounter((prev) => (prev + 1) % images.length);
           }
         }}
@@ -141,7 +134,6 @@ const GameBoy = () => {
           if (!isloading.current) {
             isloading.current = true;
             e.preventDefault();
-            console.log(counter);
             setCounter((prev) => (prev - 1 + images.length) % images.length);
           }
         }}
@@ -166,7 +158,6 @@ const GameBoy = () => {
           if (!isloading.current) {
             isloading.current = true;
             e.preventDefault();
-            console.log(counter);
             setCounter((prev) => (prev - 1 + images.length) % images.length);
           }
         }}
