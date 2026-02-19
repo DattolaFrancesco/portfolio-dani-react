@@ -41,40 +41,36 @@ const WorksTv = () => {
   useEffect(() => {
     const total = works.length;
 
+    // Definiamo la funzione handleStep qui sopra per pulizia
+    const handleStep = (direction) => {
+      isAnimating.current = true;
+      setCounter((prev) => (prev + direction + total) % total);
+
+      // Cooldown fisso: ignora ogni input per 800ms
+      // Questo copre sia la durata di GSAP (600ms) che l'inerzia del touchpad
+      setTimeout(() => {
+        isAnimating.current = false;
+      }, 400);
+    };
+
     const obs = Observer.create({
       target: window,
       type: "wheel,touch,pointer",
-      // WHEELSPEED: Riduce la sensibilità generale (utile per i touchpad)
       wheelSpeed: 0.5,
-      // TOLERANCE: Ignora i movimenti piccoli (alza a 20 o 30 se continua a skippare)
-      tolerance: 30,
+      tolerance: 50,
       onUp: () => {
-        if (isAnimating.current) return;
-        handleStep(-1);
+        if (!isAnimating.current) handleStep(-1);
       },
       onDown: () => {
-        if (isAnimating.current) return;
-        handleStep(1);
+        if (!isAnimating.current) handleStep(1);
       },
       preventDefault: true,
     });
-    const handleStep = (direction) => {
-      isAnimating.current = true;
-
-      setCounter((prev) => (prev + direction + total) % total);
-
-      // Blocchiamo gli input per 700ms (poco più della durata dell'animazione)
-      // Questo è il segreto per fermare l'inerzia del touchpad
-      setTimeout(() => {
-        isAnimating.current = false;
-      }, 700);
-    };
 
     return () => obs.kill();
   }, [works.length]);
+
   useEffect(() => {
-    console.log(counter);
-    isAnimating.current = true;
     gsap.fromTo(
       contentRef.current,
       { opacity: 0, y: 20 },
@@ -83,9 +79,6 @@ const WorksTv = () => {
         y: 0,
         duration: 0.6,
         ease: "power2.out",
-        onComplete: () => {
-          isAnimating.current = false;
-        },
       },
     );
   }, [counter]);
