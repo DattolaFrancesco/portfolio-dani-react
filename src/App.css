@@ -2,47 +2,13 @@
 :root {
   --bs-carousel-indicator-active-bg: #ff0000;
 }
-html,
-body {
-  touch-action: manipulation;
-  overflow-x: hidden;
-  font-family: Arial, Helvetica, sans-serif;
-}
-button,
-a {
-  touch-action: manipulation;
-}
-img {
-  pointer-events: none;
-  -webkit-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
-}
 .w-custom-navbar {
   width: 95%;
 }
 .animationNav {
   animation: introNav 3s forwards;
 }
-.bg-body {
-  position: relative;
-  min-height: 100%;
-  background: none;
-}
 
-.bg-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  inset: 0;
-  z-index: -10;
-  background-image: url("/imgLanding/TEXTURE.webp");
-  background-position: center;
-  background-size: cover;
-  will-change: transform;
-  transform: translateZ(0);
-}
 /* // nav bar */
 
 .bg-glass {
@@ -59,35 +25,6 @@ img {
 /* //  section hero */
 /* // section gameboy */
 
-.custom-gameboy-size {
-  top: 9%;
-  left: 5%;
-  width: 90.5%;
-  height: 37%;
-  object-fit: cover;
-  object-position: center;
-  z-index: -1;
-}
-
-.bg-custom {
-  position: relative;
-  min-height: 100svh;
-  overflow: hidden;
-}
-.bg-custom::before {
-  content: "";
-  position: fixed;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  top: -5vh;
-  z-index: -1;
-  background-image: url("/imgLanding/Verticale_Senza.webp");
-  background-position: center;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  animation: introBg 3s forwards;
-}
 .size-custom {
   width: 100vw;
   height: 100lvh;
@@ -147,15 +84,7 @@ img {
   background-color: transparent;
   rotate: 90deg;
 }
-.custom-positionRight-touched {
-  transform: translateY(-5%);
-}
-.custom-positionLeft-touched {
-  transform: translateY(5%);
-}
-.custom-positionUp-touched {
-  transform: translateY(-5%);
-}
+
 .custom-positionDown {
   top: 67.2%;
   left: 21.5%;
@@ -164,9 +93,6 @@ img {
   background-color: transparent;
 }
 
-.custom-positionDown-touched {
-  transform: translateY(5%);
-}
 .custom-push {
   top: 61%;
   height: 11.2%;
@@ -323,33 +249,7 @@ li {
   width: 120%;
   right: -8.6%;
 }
-#btn-tv-up {
-  right: 8.7%;
-  top: 36%;
-  width: 6%;
-  height: 9%;
-}
-#btn-tv-up:active {
-  transform: translateY(2%);
-}
-#btn-tv-down {
-  right: 8.7%;
-  top: 51.5%;
-  width: 6%;
-  height: 9%;
-}
-#btn-tv-down:active {
-  transform: translateY(2%);
-}
-#btn-tv-push {
-  right: 8.7%;
-  bottom: 20%;
-  width: 6%;
-  height: 9%;
-}
-#btn-tv-push:active {
-  transform: translateY(2%);
-}
+
 .min-vh-90 {
   min-height: 70vh;
 }
@@ -603,24 +503,7 @@ li {
     transform: translateX(0);
   }
 }
-@keyframes introNav {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@keyframes introBg {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 @keyframes moveUl {
   from {
     transform: translateX(-150%);

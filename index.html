@@ -19,6 +19,178 @@
     <link rel="preload" href="/img-works04/1_VETRINA.webp" as="image" type="image/webp" />
     <link rel="preload" href="/img-works05/1_POPUP.webp" as="image" type="image/webp" />
     <link rel="preload" href="/img-works06/5_MISC.webp" as="image" type="image/webp" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        touch-action: manipulation;
+        overflow-x: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      button,
+      a {
+        touch-action: manipulation;
+      }
+      img {
+        pointer-events: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+      }
+
+      /* BACKGROUNDS */
+      .bg-body,
+      .bg-custom {
+        position: relative;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+      .bg-body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        inset: 0;
+        z-index: -10;
+        background-image: url("/imgLanding/TEXTURE.webp");
+        background-position: center;
+        background-size: cover;
+        will-change: transform;
+        transform: translateZ(0);
+      }
+      .bg-custom::before {
+        content: "";
+        position: fixed;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        z-index: -1;
+        background-image: url("/imgLanding/Verticale_Senza.webp");
+        background-position: center;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        animation: introBg 3s forwards;
+      }
+
+      /* GAMEBOY */
+      .custom-gameboy-size {
+        position: absolute;
+        top: 9%;
+        left: 5%;
+        width: 90.5%;
+        height: 37%;
+        object-fit: cover;
+        object-position: center;
+        z-index: -1;
+      }
+
+      /* TV */
+      .custom-tv-size {
+        position: absolute;
+        top: 9%;
+        left: 8%;
+        width: 66%;
+        height: 80%;
+        object-fit: cover;
+        object-position: center;
+        z-index: -1;
+      }
+      .cursor-pointer-tv {
+        cursor: pointer;
+      }
+
+      /* TV steel circles */
+      .steel-circleUp,
+      .steel-circleDown,
+      .steel-circlePush {
+        position: absolute;
+        width: 120%;
+      }
+      .steel-circleUp {
+        top: -7%;
+        right: -11%;
+      }
+      .steel-circleDown {
+        top: -7%;
+        right: -8%;
+      }
+      .steel-circlePush {
+        top: -5%;
+        right: -8.6%;
+      }
+
+      /* TV button positions */
+      #btn-tv-up {
+        right: 8.7%;
+        top: 36%;
+        width: 6%;
+        height: 9%;
+      }
+      #btn-tv-up:active {
+        transform: translateY(2%);
+      }
+      #btn-tv-down {
+        right: 8.7%;
+        top: 51.5%;
+        width: 6%;
+        height: 9%;
+      }
+      #btn-tv-down:active {
+        transform: translateY(2%);
+      }
+      #btn-tv-push {
+        right: 8.7%;
+        bottom: 20%;
+        width: 6%;
+        height: 9%;
+      }
+      #btn-tv-push:active {
+        transform: translateY(2%);
+      }
+
+      /* BUTTON ANIMATIONS */
+      .custom-positionUp-touched {
+        transform: translateY(-5%);
+      }
+      .custom-positionDown-touched {
+        transform: translateY(5%);
+      }
+      .custom-positionLeft-touched {
+        transform: translateY(5%);
+      }
+      .custom-positionRight-touched {
+        transform: translateY(-5%);
+      }
+      .custom-push-touched {
+        transform: translate(-2%, 1%);
+      }
+      .custom-position-touched-tv {
+        transform: translateY(2%);
+      }
+
+      /* KEYFRAMES */
+      @keyframes introBg {
+        from {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      @keyframes introNav {
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="/app.css" media="print" onload="this.media = 'all'" />
+    <noscript><link rel="stylesheet" href="/app.css" /></noscript>
   </head>
   <body class="bg-body">
     <div id="root"></div>

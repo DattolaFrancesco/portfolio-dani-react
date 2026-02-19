@@ -14,43 +14,9 @@ const WorksTv = lazy(() => import("./components/WorksTv"));
 const SingleWorksTv = lazy(() => import("./components/SingleWorkTv"));
 
 function App() {
-  const works01 = [
-    "/img-works01/1_QUEIO.webp",
-    "/img-works01/2_QUEIO.webp",
-    "/img-works01/3_QUEIO.webp",
-    "/img-works01/4_QUEIO.webp",
-    "/img-works01/5_QUEIO.webp",
-    "/img-works01/6_QUEIO.webp",
-    "/img-works01/7_QUEIO.webp",
-    "/img-works01/8_QUEIO.webp",
-  ];
-  const works02 = [
-    "/img-works02/1_CHARACTER.webp",
-    "/img-works02/2_CHARACTER.webp",
-    "/img-works02/3_CHARACTER.webp",
-    "/img-works02/4_CHARACTER.webp",
-    "/img-works02/5_CHARACTER.webp",
-    "/img-works02/6_CHARACTER.webp",
-    "/img-works02/7_CHARACTER.webp",
-    "/img-works02/8_CHARACTER.webp",
-  ];
-  const works03 = ["/img-works03/1_LETTERING.webp", "/img-works03/2_LETTERING.webp"];
-  const works04 = ["/img-works04/1_VETRINA.webp", "/img-works04/2_VETRINA.webp", "/img-works04/3_VETRINA.webp", "/img-works04/4_VETRINA.JPG"];
-  const works05 = ["/img-works05/1_POPUP.webp", "/img-works05/2_POPUP.webp", "/img-works05/3_POPUP.webp", "/img-works05/4_POPUP.webp"];
-  const works06 = ["/img-works06/1_MISC.webp", "/img-works06/2_MISC.jpg", "/img-works06/3_MISC.jpg", "/img-works06/4_MISC.jpg", "/img-works06/5_MISC.webp"];
-  const works = [works01, works02, works03, works04, works05, works06];
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
-  useEffect(() => {
-    works.map((e) => {
-      e.map((e) => {
-        const img = new Image();
-        img.src = e;
-      });
-    });
-  }, []);
-
   return (
     <Suspense
       fallback={
