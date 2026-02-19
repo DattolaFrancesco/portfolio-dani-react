@@ -32,21 +32,21 @@ const NavBar = () => {
         <img src="/imgLanding/Cuore1.webp" alt="Logo" decoding="async" draggable="false" />
       </a>
 
-      <div className="list-unstyled d-flex align-items-center mb-0 bg-glass rounded-pill px-2 w-max-content gap-3 py-2">
+      <div className="list-unstyled d-flex align-items-center mb-0 bg-glass rounded-pill w-max-content gap-0 ">
         {width > 576 ? (
           <Link
             onClick={() => {
               ScrollTrigger.getAll().forEach((t) => t.kill());
             }}
             to={location.pathname === "/WorksTv" ? "/#tv" : "/WorksTv"}
-            className={`nav-link fw-bold px-2 rounded-pill ${location.pathname === "/WorksTv" || location.pathname === "/works" ? "selector" : ""}`}
+            className={`nav-link  px-2  rounded-pill ${location.pathname === "/WorksTv" || location.pathname === "/works" ? "selector" : ""}`}
           >
             WORKS
           </Link>
         ) : (
           <Link
             to={location.pathname === "/works" ? "/#game-boy" : "/works"}
-            className={`nav-link fw-bold px-2 rounded-pill ${location.pathname === "/works" ? "selector" : ""}`}
+            className={`nav-link  px-2 py-1 rounded-pill ${location.pathname === "/works" ? "selector" : ""}`}
           >
             WORKS
           </Link>
@@ -57,7 +57,7 @@ const NavBar = () => {
             ScrollTrigger.getAll().forEach((t) => t.kill());
           }}
           to="/info"
-          className={`nav-link rounded-pill px-2 fw-bold ${location.pathname === "/info" ? "selector" : ""}`}
+          className={`nav-link rounded-pill px-2 py-1  ${location.pathname === "/info" ? "selector" : ""}`}
         >
           INFO
         </Link>

@@ -6,8 +6,10 @@
 }
 :root {
   --bs-carousel-indicator-active-bg: #ff0000;
-  --fs-xs: clamp(1.1rem, 1.2vw, 1.4rem);
+  --fs-xxs: clamp(0.7rem, 0.8vw, 1rem);
+  --fs-xs: clamp(1rem, 1vw, 1.4rem);
   --fs-s: clamp(1.4rem, 1.6vw, 1.6rem);
+  --fs-xm: clamp(2rem, 2vw, 2.2rem);
   --fs-m: clamp(4rem, 4vw, 6rem);
   --fs-l: clamp(12rem, 6vw, 14rem);
   --fs-d: clamp(18rem, 6vw, 20rem);
@@ -38,12 +40,28 @@ div,
 input,
 button {
   font:
-    var(--fs-xs) / var(--fs-xs) mattone,
+    var(--fs-xs) mattone,
     Arial,
     sans-serif;
   overflow-wrap: break-word;
   text-decoration: none;
 }
+h2 {
+  font-size: var(--fs-xm);
+  letter-spacing: -2px;
+  line-height: 1;
+}
+p {
+  font-size: var(--fs-xxs);
+  letter-spacing: 0px;
+  line-height: 1;
+}
+a {
+  font-size: var(--fs-xs) !important;
+  letter-spacing: 0px;
+  line-height: 1;
+}
+
 .w-custom-navbar {
   width: 95%;
 }
@@ -115,7 +133,7 @@ button {
   white-space: nowrap;
   margin-right: 2rem;
   font-size: 4rem !important;
-  letter-spacing: -8px;
+  letter-spacing: -6px;
   font-weight: 700;
   color: rgb(232, 37, 41);
 }
@@ -214,10 +232,6 @@ li {
 }
 .vh-custom-info {
   min-height: 90dvh;
-}
-.fs-custom-works {
-  font-size: 3rem;
-  letter-spacing: -2px;
 }
 
 .interval {

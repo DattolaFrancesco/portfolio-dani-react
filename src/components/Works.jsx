@@ -79,8 +79,8 @@ const Works = () => {
               <section className={i === 5 ? "mb-5" : ""}>
                 <div className="container">
                   <section className="mt-5">
-                    <h2 className="fs-custom-works fw-semibold">{h2S[i]}</h2>
-                    <p className="fs-7">{descriptions[i]}</p>
+                    <h2>{h2S[i]}</h2>
+                    <p>{descriptions[i]}</p>
                   </section>
                 </div>
                 <div id={titles[i]} className="carousel slide">
