@@ -397,6 +397,9 @@ li {
   text-align: end;
   opacity: 0.25;
 }
+.mb-custom-last-work {
+  margin-bottom: 30vh;
+}
 /* media query  */
 @media screen and (min-width: 480px) {
   header,
@@ -436,6 +439,15 @@ li {
   }
   .w-custom-info-cell {
     width: 50%;
+  }
+
+  .custom-push {
+    top: 60.6%;
+    height: 11.6%;
+    width: 40.5%;
+    background-color: transparent;
+    rotate: 337deg;
+    left: 60%;
   }
 }
 
