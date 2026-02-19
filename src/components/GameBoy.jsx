@@ -64,7 +64,7 @@ const GameBoy = () => {
   }, [location]);
   return (
     <section id="game-boy" className="position-relative">
-      <img id="worksDisplayer" src="imgLanding/GAMEBOYOFFICIAL.webp" alt="gameboy" loading="lazy" decoding="async" draggable="false" className="size-custom" />
+      <img id="worksDisplayer" src="imgLanding/GAMEBOYOFFICIAL.webp" alt="gameboy" decoding="async" draggable="false" className="size-custom" />
       <div className="position-absolute custom-gameboy-size overflow-hidden">
         <img id="worksPhoto" src={image} alt="works" draggable="false" className="w-100 h-100" loading="eager" />
 
