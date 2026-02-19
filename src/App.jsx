@@ -21,8 +21,7 @@ function App() {
     <Suspense
       fallback={
         <div className="d-flex justify-content-center align-items-center vh-100 ">
-          <h1 className="display-1 text-danger">ELSOLITO</h1>
-          <Spinner />
+          <img id="loading-cuore" src="/imgLanding/Cuore1.webp" alt="Logo" decoding="async" draggable="false" />
         </div>
       }
     >
