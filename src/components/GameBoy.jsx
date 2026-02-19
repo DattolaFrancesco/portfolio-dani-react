@@ -6,7 +6,7 @@ const GameBoy = () => {
   console.log(location.hash);
   const navigate = useNavigate();
   const images = [
-    "/imgLanding/QUEIO_1.webp",
+    "/imgLanding/QUEIO_12.webp",
     "/imgLanding/CHARACTER_2.webp",
     "/imgLanding/3_LETTERING.webp",
     "/imgLanding/4_Vetrina.png",
@@ -14,8 +14,6 @@ const GameBoy = () => {
     "/imgLanding/MISC_6.webp",
   ];
   const tagRelocation = ["01Queio", "02Character", "03Lettering", "04Vetrina", "05Popup", "06Misc"];
-  const blur = new Image();
-  blur.src = "imgLanding/blur.gif";
   const btnUpRef = useRef(null);
   const btnRightRef = useRef(null);
   const btnLeftRef = useRef(null);
@@ -23,6 +21,7 @@ const GameBoy = () => {
   const btnPushRef = useRef(null);
   const [image, setImage] = useState(images[0]);
   const [counter, setCounter] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
   const isloading = useRef(false);
   const redirect = () => {
     const hash = location.hash;
@@ -41,10 +40,15 @@ const GameBoy = () => {
     else if (counter < 0) setCounter(5);
   };
   const changeImg = (n) => {
-    setImage("imgLanding/blur.gif");
+    setShowVideo(true);
+
     setTimeout(() => {
       setImage(images[n]);
-      isloading.current = false;
+
+      setTimeout(() => {
+        setShowVideo(false);
+        isloading.current = false;
+      }, 100);
     }, 300);
   };
   const pushWork = (n) => {
@@ -60,8 +64,26 @@ const GameBoy = () => {
   }, [location]);
   return (
     <section id="game-boy" className="position-relative">
-      <img id="worksDisplayer" src="imgLanding/GAMEBOYOFFICIAL.webp" alt="gameboy" loading="lazy" decoding="async" draggable="false" className="size-custom" />
-      <img id="worksPhoto" src={image} alt="works" loading="lazy" decoding="async" draggable="false" className="position-absolute custom-gameboy-size" />
+      <img id="worksDisplayer" src="imgLanding/GAMEBOYOFFICIAL.webp" alt="gameboy" decoding="async" draggable="false" className="size-custom" />
+      <div className="position-absolute custom-gameboy-size overflow-hidden">
+        <img id="worksPhoto" src={image} alt="works" draggable="false" className="w-100 h-100" loading="eager" />
+
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="position-absolute top-0 start-0 w-100 h-100"
+          style={{
+            objectFit: "cover",
+            pointerEvents: "none",
+            opacity: showVideo ? 1 : 0,
+            transition: "opacity 0.2s ease-in-out",
+          }}
+        >
+          <source src="/imgLanding/blur.mp4" type="video/mp4" />
+        </video>
+      </div>
       <a
         onClick={(e) => {
           console.log(isloading.current);

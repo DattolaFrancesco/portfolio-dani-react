@@ -42,12 +42,15 @@ const Works = () => {
   let counter = 0;
   const location = useLocation();
   const getWork = () => {
-    let loc = location.hash;
-    const id = loc.replace("#", "");
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      let loc = location.hash;
+      const id = loc.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 200);
   };
   useEffect(() => {
     getWork();
@@ -67,48 +70,50 @@ const Works = () => {
   }, [width]);
   return (
     <>
-      {works.map((e, i) => {
-        counter++;
-        return (
-          <div key={i} className={`${i === 0 ? "mt-4" : ""}`}>
-            <section className="interval" id={tagRelocation[i]}></section>
-            <section className={i === 5 ? "mb-5" : ""}>
-              <div className="container">
-                <section className="mt-5">
-                  <h2 className="fs-custom-works fw-semibold">{h2S[i]}</h2>
-                  <p className="fs-7">{descriptions[i]}</p>
-                </section>
-              </div>
-              <div id={titles[i]} className="carousel slide">
-                <div className="carousel-indicators">
-                  {e.map((e, i) => {
-                    return (
-                      <button
-                        key={i}
-                        type="button"
-                        data-bs-target={`#${titles[i]}`}
-                        data-bs-slide-to={i}
-                        className={i === 0 ? "active" : ""}
-                        aria-current={i === 0 ? "true" : undefined}
-                        aria-label={`Slide ${i + 1}`}
-                      ></button>
-                    );
-                  })}
+      <div className="mb-custom-last-work">
+        {works.map((e, i) => {
+          counter++;
+          return (
+            <div key={i} className={`${i === 0 ? "mt-4" : ""}`}>
+              <section className="interval" id={tagRelocation[i]}></section>
+              <section className={i === 5 ? "mb-5" : ""}>
+                <div className="container">
+                  <section className="mt-5">
+                    <h2 className="fs-custom-works fw-semibold">{h2S[i]}</h2>
+                    <p className="fs-7">{descriptions[i]}</p>
+                  </section>
                 </div>
-                <div className={`carousel-inner ${i === 1 ? "" : "shadow-custom"}`} style={{ minHeight: "40vh" }}>
-                  {e.map((e, i) => {
-                    return (
-                      <div className={` carousel-item ${i === 0 ? "active" : ""} `} key={i}>
-                        <img src={e} className="d-block w-100" loading="lazy" decoding="async" draggable="false" alt="queio works" />
-                      </div>
-                    );
-                  })}
+                <div id={titles[i]} className="carousel slide">
+                  <div className="carousel-indicators">
+                    {e.map((e, i) => {
+                      return (
+                        <button
+                          key={i}
+                          type="button"
+                          data-bs-target={`#${titles[i]}`}
+                          data-bs-slide-to={i}
+                          className={i === 0 ? "active" : ""}
+                          aria-current={i === 0 ? "true" : undefined}
+                          aria-label={`Slide ${i + 1}`}
+                        ></button>
+                      );
+                    })}
+                  </div>
+                  <div className={`carousel-inner ${i === 1 ? "" : "shadow-custom"}`} style={{ minHeight: "40vh" }}>
+                    {e.map((e, i) => {
+                      return (
+                        <div className={` carousel-item ${i === 0 ? "active" : ""} `} key={i}>
+                          <img src={e} className="d-block w-100" loading="lazy" draggable="false" alt="queio works" />
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
-            </section>
-          </div>
-        );
-      })}
+              </section>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };

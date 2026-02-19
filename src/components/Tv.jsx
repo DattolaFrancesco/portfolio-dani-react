@@ -13,10 +13,9 @@ const Tv = () => {
   ];
   const tagRelocation = ["01Queio", "02Character", "03Lettering", "04Vetrina", "05Popup", "06Misc"];
   const navigate = useNavigate();
-  const blur = new Image();
-  blur.src = "imgLanding/blur.gif";
   const [image, setImage] = useState(images[0]);
   const [counter, setCounter] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
   const isloading = useRef(false);
   const btnUpRef = useRef(null);
   const btnDownRef = useRef(null);
@@ -40,10 +39,15 @@ const Tv = () => {
     }
   };
   const changeImg = (n) => {
-    setImage("imgLanding/blur.gif");
+    setShowVideo(true);
+
     setTimeout(() => {
       setImage(images[n]);
-      isloading.current = false;
+
+      setTimeout(() => {
+        setShowVideo(false);
+        isloading.current = false;
+      }, 100);
     }, 300);
   };
   useEffect(() => {
@@ -58,7 +62,26 @@ const Tv = () => {
   return (
     <section id="tv" className="size-custom position-relative">
       <img src="tv/Tvnobtn.webp" alt="tv" loading="lazy" decoding="async" draggable="false" className="size-custom" />
-      <img src={`${image ? image : "imgLanding/blur.gif"}`} alt="" loading="lazy" draggable="false" className="position-absolute  custom-tv-size" />
+
+      <div className="position-absolute custom-tv-size overflow-hidden">
+        <img id="worksPhoto" src={image} alt="works" draggable="false" className="w-100 h-100" loading="eager" />
+
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="position-absolute top-0 start-0 w-100 h-100"
+          style={{
+            objectFit: "cover",
+            pointerEvents: "none",
+            opacity: showVideo ? 1 : 0,
+            transition: "opacity 0.2s ease-in-out",
+          }}
+        >
+          <source src="/imgLanding/blur.mp4" type="video/mp4" />
+        </video>
+      </div>
       <a
         ref={btnUpRef}
         onClick={(e) => {
