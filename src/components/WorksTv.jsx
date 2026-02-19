@@ -54,7 +54,7 @@ const WorksTv = () => {
       target: window,
       type: "wheel,touch,pointer",
       wheelSpeed: 0.5,
-      tolerance: 300,
+      tolerance: 50,
       onUp: () => {
         if (!isAnimating.current) handleStep(-1);
       },
