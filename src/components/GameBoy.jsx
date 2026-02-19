@@ -9,7 +9,7 @@ const GameBoy = () => {
     "/imgLanding/QUEIO_12.webp",
     "/imgLanding/CHARACTER_2.webp",
     "/imgLanding/3_LETTERING.webp",
-    "/imgLanding/4_Vetrina.png",
+    "/imgLanding/4_Vetrina.webp",
     "/imgLanding/5_POPUP.webp",
     "/imgLanding/MISC_6.webp",
   ];
@@ -35,10 +35,12 @@ const GameBoy = () => {
       scrollTo(0, 0);
     }
   };
-  const counterControll = () => {
-    if (counter > 5) setCounter(0);
-    else if (counter < 0) setCounter(5);
-  };
+  useEffect(() => {
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
   const changeImg = (n) => {
     setShowVideo(true);
 
@@ -55,8 +57,6 @@ const GameBoy = () => {
     navigate(`/works#${tagRelocation[n]}`);
   };
   useEffect(() => {
-    console.log(" effect");
-    counterControll();
     changeImg(counter);
   }, [counter]);
   useEffect(() => {
@@ -66,7 +66,7 @@ const GameBoy = () => {
     <section id="game-boy" className="position-relative">
       <img id="worksDisplayer" src="imgLanding/GAMEBOYOFFICIAL.webp" alt="gameboy" decoding="async" draggable="false" className="size-custom" />
       <div className="position-absolute custom-gameboy-size overflow-hidden">
-        <img id="worksPhoto" src={image} alt="works" draggable="false" className="w-100 h-100" loading="eager" />
+        <img id="worksPhoto" src={image} alt="works" draggable="false" className="w-100 h-100" />
 
         <video
           autoPlay
@@ -92,7 +92,7 @@ const GameBoy = () => {
             isloading.current = true;
             e.preventDefault();
             console.log(counter);
-            setCounter((prev) => prev + 1);
+            setCounter((prev) => (prev + 1) % images.length);
           }
         }}
         ref={btnUpRef}
@@ -118,7 +118,7 @@ const GameBoy = () => {
             isloading.current = true;
             e.preventDefault();
             console.log(counter);
-            setCounter((prev) => prev + 1);
+            setCounter((prev) => (prev + 1) % images.length);
           }
         }}
         ref={btnRightRef}
@@ -142,7 +142,7 @@ const GameBoy = () => {
             isloading.current = true;
             e.preventDefault();
             console.log(counter);
-            setCounter((prev) => prev - 1);
+            setCounter((prev) => (prev - 1 + images.length) % images.length);
           }
         }}
         ref={btnDownRef}
@@ -167,7 +167,7 @@ const GameBoy = () => {
             isloading.current = true;
             e.preventDefault();
             console.log(counter);
-            setCounter((prev) => prev - 1);
+            setCounter((prev) => (prev - 1 + images.length) % images.length);
           }
         }}
         ref={btnLeftRef}
