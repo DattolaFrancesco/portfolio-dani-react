@@ -54,13 +54,13 @@ const Info = () => {
                   <br /> <span className="underline position-relative">Piacentile</span>
                 </h1>
                 <a href="tel:+393519804290" className="phone-link">
-                  <p className="m-0 text-lowercase">+39 351 980 4290</p>
+                  <p className="m-0 ">+39 351 980 4290</p>
                 </a>
                 <a href="mailto:ELSOLITOO10@GMAIL.COM" className="text-black text-decoration-none">
-                  <p className="m-0 text-lowercase">ELSOLITOO10@GMAIL.COM</p>
+                  <p className="m-0 ">elsolito010@gmail.com</p>
                 </a>
                 <a href="https://www.instagram.com/_.elsolito._?igsh=czZwYzB0NTNxaWtp&utm_source=qr" className="text-black text-decoration-none">
-                  <p className="m-0 text-lowercase">INSTAGRAM ACCOUNT</p>
+                  <p className="m-0 ">instagram account</p>
                 </a>
               </Col>
               <Col xs={12} className="d-flex justify-content-end moveImg" style={{ zIndex: "999" }}>
