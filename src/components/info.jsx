@@ -37,10 +37,10 @@ const Info = () => {
 
           <div className="marquee ">
             <div className="marquee-track">
-              <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
-              <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
-              <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
-              <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
+              <h1>ILLUSTRATOR AND GRAPHIC - </h1>
+              <h1>ILLUSTRATOR AND GRAPHIC - </h1>
+              <h1>ILLUSTRATOR AND GRAPHIC - </h1>
+              <h1>ILLUSTRATOR AND GRAPHIC - </h1>
             </div>
           </div>
         </div>

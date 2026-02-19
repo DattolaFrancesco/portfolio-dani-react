@@ -94,7 +94,7 @@ const WorksTv = () => {
       <div ref={contentRef} className="h-100 z-3 position-relative">
         <Row className="w-100 justify-content-around align-items-center min-vh-100 m-0">
           <Col className="col-3">
-            <p className="fs-1 text-start lh-sm-custom uppercase font-weight-bold">{h2S[counter]}</p>
+            <p className="fs-3 text-start lh-sm-custom uppercase font-weight-bold">{h2S[counter]}</p>
           </Col>
 
           <Col className="col-4">
@@ -104,7 +104,7 @@ const WorksTv = () => {
           </Col>
 
           <Col className="col-3">
-            <p className="text-start fs-6 lh-sm-custom">{descriptions[counter]}</p>
+            <p className="text-start  lh-sm-custom">{descriptions[counter]}</p>
           </Col>
         </Row>
       </div>
@@ -112,8 +112,10 @@ const WorksTv = () => {
       {/* Marquee fisso */}
       <div className="marquee position-fixed bottom-0 ">
         <div className="marquee-track">
-          <h1>ILLUSTRATOR AND GRAPHIC AND - </h1>
-          <h1>ILLUSTRATOR AND GRAPHIC AND - </h1>
+          <h1>ILLUSTRATOR AND GRAPHIC - </h1>
+          <h1>ILLUSTRATOR AND GRAPHIC - </h1>
+          <h1>ILLUSTRATOR AND GRAPHIC - </h1>
+          <h1>ILLUSTRATOR AND GRAPHIC - </h1>
         </div>
       </div>
     </div>
