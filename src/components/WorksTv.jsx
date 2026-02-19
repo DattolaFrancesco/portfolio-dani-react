@@ -7,6 +7,7 @@ import { Observer } from "gsap/Observer";
 gsap.registerPlugin(Observer);
 
 const WorksTv = () => {
+  console.log(".");
   const location = useLocation();
   const navigate = useNavigate();
   console.log(location.hash.slice(2, 3));
