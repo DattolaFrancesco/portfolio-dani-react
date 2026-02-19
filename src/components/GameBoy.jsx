@@ -63,7 +63,7 @@ const GameBoy = () => {
     <section id="game-boy" className="position-relative">
       <img id="worksDisplayer" src="imgLanding/GAMEBOYOFFICIAL.webp" alt="gameboy" decoding="async" draggable="false" className="size-custom" />
       <div className="position-absolute custom-gameboy-size overflow-hidden">
-        <img id="worksPhoto" src={image} alt="works" draggable="false" className="w-100 h-100" />
+        <img id="worksPhoto" src={image} alt="works" loading="lazy" draggable="false" className="w-100 h-100" />
 
         <video
           autoPlay
