@@ -103,7 +103,7 @@ const Works = () => {
                     {e.map((e, i) => {
                       return (
                         <div className={` carousel-item ${i === 0 ? "active" : ""} `} key={i}>
-                          <img src={e} className="d-block w-100" loading={imgIndex === 0 ? "eager" : "lazy"} draggable="false" alt="queio works" />
+                          <img src={e} className="d-block w-100" loading={i === 0 ? "eager" : "lazy"} draggable="false" alt="queio works" />
                         </div>
                       );
                     })}
