@@ -99,7 +99,7 @@ const WorksTv = () => {
 
           <Col className="col-4">
             <Link to={`/WorksTv/${tagRelocation[counter]}`} className={"d-block w-100 h-100 align-items-center z-3 panel position-relative"}>
-              <img src={works[counter]} alt={h2S[counter]} className={`w-100  rounded   ${counter !== 1 ? " shadow-custom " : ""} `} draggable="false" />
+              <img src={works[counter]} alt={h2S[counter]} className="w-100  rounded " draggable="false" />
             </Link>
           </Col>
 

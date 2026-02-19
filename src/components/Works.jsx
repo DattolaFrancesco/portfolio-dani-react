@@ -99,7 +99,7 @@ const Works = () => {
                       );
                     })}
                   </div>
-                  <div className={`carousel-inner ${i === 1 ? "" : "shadow-custom"}`} style={{ minHeight: "40vh" }}>
+                  <div className="carousel-inner" style={{ minHeight: "40vh" }}>
                     {e.map((e, i) => {
                       return (
                         <div className={` carousel-item ${i === 0 ? "active" : ""} `} key={i}>

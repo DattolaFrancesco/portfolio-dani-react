@@ -39,7 +39,7 @@ const NavBar = () => {
               ScrollTrigger.getAll().forEach((t) => t.kill());
             }}
             to={location.pathname === "/WorksTv" ? "/#tv" : "/WorksTv"}
-            className={`nav-link  px-2  rounded-pill ${location.pathname === "/WorksTv" || location.pathname === "/works" ? "selector" : ""}`}
+            className={`nav-link  px-2 py-1  rounded-pill ${location.pathname === "/WorksTv" || location.pathname === "/works" ? "selector" : ""}`}
           >
             WORKS
           </Link>

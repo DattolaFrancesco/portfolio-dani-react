@@ -1,9 +1,4 @@
 /* body */
-@font-face {
-  font-family: "mattone";
-  src: url(/font/Mattone-Bold.woff2) format("woff2");
-  font-display: swap;
-}
 :root {
   --bs-carousel-indicator-active-bg: #ff0000;
   --fs-xxs: clamp(0.7rem, 0.8vw, 1rem);
