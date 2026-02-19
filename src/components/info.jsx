@@ -49,7 +49,7 @@ const Info = () => {
           <section>
             <Row className="mx-2 gap-custom-info">
               <Col xs={12} className="fs-5 lh-sm fw-normal w-max-content moveUl ">
-                <h1 className="mb-4 display-4 fw-custom-info h-sm-custom-info">
+                <h1 className="mb-4 display-4 fw-custom-info lh-sm-custom-info">
                   Daniele
                   <br /> <span className="underline position-relative">Piacentile</span>
                 </h1>
