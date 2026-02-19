@@ -41,13 +41,10 @@ const WorksTv = () => {
   useEffect(() => {
     const total = works.length;
 
-    // Definiamo la funzione handleStep qui sopra per pulizia
     const handleStep = (direction) => {
       isAnimating.current = true;
       setCounter((prev) => (prev + direction + total) % total);
 
-      // Cooldown fisso: ignora ogni input per 800ms
-      // Questo copre sia la durata di GSAP (600ms) che l'inerzia del touchpad
       setTimeout(() => {
         isAnimating.current = false;
       }, 400);
@@ -57,7 +54,7 @@ const WorksTv = () => {
       target: window,
       type: "wheel,touch,pointer",
       wheelSpeed: 0.5,
-      tolerance: 50,
+      tolerance: 300,
       onUp: () => {
         if (!isAnimating.current) handleStep(-1);
       },
