@@ -103,7 +103,7 @@ const WorksTv = () => {
           </Col>
 
           <Col className="col-3">
-            <p className="text-center fs-6 lh-sm-custom">{descriptions[counter]}</p>
+            <p className="text-start fs-6 lh-sm-custom">{descriptions[counter]}</p>
           </Col>
         </Row>
       </div>

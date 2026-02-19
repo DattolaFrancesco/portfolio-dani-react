@@ -1,12 +1,25 @@
 /* body */
+@font-face {
+  font-family: "mattone";
+  src: url(/font/Mattone-Bold.woff2) format("woff2");
+  font-display: swap;
+}
 :root {
   --bs-carousel-indicator-active-bg: #ff0000;
+  --fs-s: clamp(1.4rem, 1.6vw, 1.6rem);
+  --fs-m: clamp(4rem, 4vw, 6rem);
+  --fs-l: clamp(12rem, 6vw, 14rem);
+  --fs-d: clamp(18rem, 6vw, 20rem);
 }
 html,
 body {
   touch-action: manipulation;
   overflow-x: hidden;
-  font-family: Arial, Helvetica, sans-serif;
+  font:
+    var(--fs-s)/var(--fs-s) mattone,
+    Arial,
+    sans-serif;
+  overflow-wrap: break-word;
 }
 button,
 a {
@@ -89,6 +102,7 @@ img {
   white-space: nowrap;
   margin-right: 2rem;
   font-size: 5rem;
+  letter-spacing: -8px;
   font-weight: 700;
   color: rgb(232, 37, 41);
 }
