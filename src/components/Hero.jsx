@@ -9,7 +9,6 @@ const Hero = () => {
           <h1>ILLUSTRATOR AND GRAPHIC AND</h1>
         </div>
       </div>
-      <p className="scrollP">SCROLL DOWN</p>
     </section>
   );
 };
