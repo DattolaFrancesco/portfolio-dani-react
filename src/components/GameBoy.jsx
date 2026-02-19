@@ -61,7 +61,7 @@ const GameBoy = () => {
   return (
     <section id="game-boy" className="position-relative">
       <img id="worksDisplayer" src="imgLanding/GAMEBOYOFFICIAL.webp" alt="gameboy" loading="lazy" decoding="async" draggable="false" className="size-custom" />
-      <img id="worksPhoto" src={image} alt="works" loading="lazy" decoding="async" draggable="false" className="position-absolute custom-gameboy-size" />
+      <img id="worksPhoto" src={image} alt="works" draggable="false" className="position-absolute custom-gameboy-size" />
       <a
         onClick={(e) => {
           console.log(isloading.current);
