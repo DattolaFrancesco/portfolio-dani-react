@@ -42,6 +42,7 @@ const SingleWorksTv = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const panels = gsap.utils.toArray(".panel");
+      const panelWidth = window.innerHeight * 0.8;
       gsap.to(panels, {
         xPercent: -100 * (panels.length - 1),
         ease: "none",
@@ -55,16 +56,16 @@ const SingleWorksTv = () => {
         },
       });
 
-      ScrollTrigger.create({
-        trigger: bottomRef.current,
-        start: "top bottom",
-        end: "bottom bottom",
-        onUpdate: (self) => {
-          if (self.progress >= 0.99 && self.direction === 1) {
-            navigate("/WorksTv");
-          }
-        },
-      });
+      // ScrollTrigger.create({
+      //   trigger: bottomRef.current,
+      //   start: "top bottom",
+      //   end: "bottom bottom",
+      //   onUpdate: (self) => {
+      //     if (self.progress >= 0.99 && self.direction === 1) {
+      //       navigate("/WorksTv");
+      //     }
+      //   },
+      // });
       setTimeout(() => {
         window.scrollTo(0, 0);
       }, 10);
@@ -82,13 +83,13 @@ const SingleWorksTv = () => {
         <section ref={containerRef} className="d-flex align-items-center  flex-row overflow-hidden vh-100">
           {works[path].map((works, i) => {
             return (
-              <div key={i} className="vh-custom-singleW flex-shrink-0 panel">
+              <div key={i} className="vh-custom-singleW flex-shrink-0 panel d-flex justify-content-center align-items-center">
                 <img src={works} alt="" className="w-100" />
               </div>
             );
           })}
         </section>
-        <Row ref={secondPanel} className="min-vh-100 gap-1 gap-lg-5  justify-content-center align-items-center m-custom-singlew">
+        {/* <Row ref={secondPanel} className="min-vh-100 gap-1 gap-lg-5  justify-content-center align-items-center m-custom-singlew">
           {works[path].map((works, i) => {
             return (
               <Col sm={4} md={3} lg={2} xl={1} key={i / 3} className="px-0">
@@ -98,7 +99,7 @@ const SingleWorksTv = () => {
           })}
         </Row>
 
-        <div ref={bottomRef} style={{ height: "30vh" }} />
+        <div ref={bottomRef} style={{ height: "30vh" }} /> */}
       </div>
     </>
   );

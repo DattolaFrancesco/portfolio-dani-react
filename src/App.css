@@ -111,6 +111,8 @@ a {
   bottom: 2%;
   width: 100%;
   overflow: hidden;
+}
+.introMarq {
   animation: moveMarquee 3s forwards;
 }
 
@@ -125,7 +127,7 @@ a {
 
 .marquee-track h1 {
   white-space: nowrap;
-  margin-right: 2rem;
+  margin-right: 1rem;
   font-size: 4rem !important;
   letter-spacing: -6px;
   font-weight: 700;
@@ -542,10 +544,7 @@ li {
     font-size: 4rem !important;
     margin-bottom: 0;
   }
-  .marquee-track:hover {
-    animation-play-state: paused;
-    cursor: pointer;
-  }
+
   .custom-m {
     margin-top: 0 !important;
   }
@@ -611,7 +610,7 @@ li {
     transform: translateX(0);
   }
 }
-@keyframes moveUl {
+/* @keyframes moveUl {
   from {
     transform: translateX(-150%);
   }
@@ -626,4 +625,4 @@ li {
   to {
     transform: translateX(0);
   }
-}
+} */
