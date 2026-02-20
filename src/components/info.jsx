@@ -38,10 +38,10 @@ const Info = (props) => {
 
           <div className="marquee">
             <div className="marquee-track">
-              <h1>ILLUSTRATOR AND GRAPHIC - </h1>
-              <h1>ILLUSTRATOR AND GRAPHIC - </h1>
-              <h1>ILLUSTRATOR AND GRAPHIC - </h1>
-              <h1>ILLUSTRATOR AND GRAPHIC - </h1>
+              <h1>ILLUSTRATOR AND GRAPHIC DESIGNER - </h1>
+              <h1>ILLUSTRATOR AND GRAPHIC DESIGNER - </h1>
+              <h1>ILLUSTRATOR AND GRAPHIC DESIGNER - </h1>
+              <h1>ILLUSTRATOR AND GRAPHIC DESIGNER - </h1>
             </div>
           </div>
         </div>

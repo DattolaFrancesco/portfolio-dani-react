@@ -39,48 +39,62 @@ const SingleWorksTv = () => {
   const secondPanel = useRef(null);
   const bottomRef = useRef(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const panels = gsap.utils.toArray(".panel");
-      const panelWidth = window.innerHeight * 0.8;
-      gsap.to(panels, {
-        xPercent: -100 * (panels.length - 1),
-        ease: "none",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          pin: true,
-          pinSpacing: true,
-          anticipatePin: 1,
-          scrub: 1,
-          end: () => "+=" + containerRef.current.offsetWidth * (path === 1 ? 5 : panels.length),
-        },
-      });
+  // useEffect(() => {
+  //   const ctx = gsap.context(() => {
+  // const panels = gsap.utils.toArray(".panel");
+  // const panelWidth = window.innerHeight * 0.8;
+  // gsap.to(panels, {
+  //   x: -panelWidth * panels.length,
+  //   ease: "none",
+  //   scrollTrigger: {
+  //     trigger: containerRef.current,
+  //     pin: true,
+  //     pinSpacing: true,
+  //     anticipatePin: 1,
+  //     scrub: 1,
+  //     end: () => "+=" + containerRef.current.offsetWidth * (path === 1 ? 5 : panels.length),
+  //   },
+  // });
 
-      // ScrollTrigger.create({
-      //   trigger: bottomRef.current,
-      //   start: "top bottom",
-      //   end: "bottom bottom",
-      //   onUpdate: (self) => {
-      //     if (self.progress >= 0.99 && self.direction === 1) {
-      //       navigate("/WorksTv");
-      //     }
-      //   },
-      // });
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-      }, 10);
-    }, containerRef);
+  //   ScrollTrigger.create({
+  //     trigger: bottomRef.current,
+  //     scroller: containerRef.current,
+  //     start: "left right",
+  //     onUpdate: (self) => {
+  //       if (self.progress >= 0.99 && self.direction === 1) {
+  //         navigate("/WorksTv");
+  //       }
+  //     },
+  //   });
+  //   setTimeout(() => {
+  //     window.scrollTo(0, 0);
+  //   }, 10);
+  // }, containerRef);
+
+  //   return () => {
+  //     ctx.revert();
+  //     ScrollTrigger.getAll().forEach((t) => t.kill());
+  //   };
+  // }, [navigate, path]);
+  useEffect(() => {
+    const el = containerRef.current;
+
+    const handleWheel = (e) => {
+      e.preventDefault();
+      el.scrollLeft += e.deltaY;
+    };
+
+    el.addEventListener("wheel", handleWheel, { passive: false });
 
     return () => {
-      ctx.revert();
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      el.removeEventListener("wheel", handleWheel);
     };
-  }, [navigate, path]);
+  }, []);
 
   return (
     <>
       <div>
-        <section ref={containerRef} className="d-flex align-items-center  flex-row overflow-hidden vh-100">
+        <section id="container-works" ref={containerRef} className="d-flex flex-row overflow-auto vh-100">
           {works[path].map((works, i) => {
             return (
               <div key={i} className="vh-custom-singleW flex-shrink-0 panel d-flex justify-content-center align-items-center">
@@ -89,6 +103,7 @@ const SingleWorksTv = () => {
             );
           })}
         </section>
+
         {/* <Row ref={secondPanel} className="min-vh-100 gap-1 gap-lg-5  justify-content-center align-items-center m-custom-singlew">
           {works[path].map((works, i) => {
             return (

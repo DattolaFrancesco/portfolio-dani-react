@@ -112,10 +112,10 @@ const WorksTv = () => {
       {/* Marquee fisso */}
       <div className="marquee position-fixed bottom-0 ">
         <div className="marquee-track">
-          <h1>ILLUSTRATOR AND GRAPHIC - </h1>
-          <h1>ILLUSTRATOR AND GRAPHIC - </h1>
-          <h1>ILLUSTRATOR AND GRAPHIC - </h1>
-          <h1>ILLUSTRATOR AND GRAPHIC - </h1>
+          <h1>ILLUSTRATOR AND GRAPHIC DESIGNER - </h1>
+          <h1>ILLUSTRATOR AND GRAPHIC DESIGNER - </h1>
+          <h1>ILLUSTRATOR AND GRAPHIC DESIGNER - </h1>
+          <h1>ILLUSTRATOR AND GRAPHIC DESIGNER - </h1>
         </div>
       </div>
     </div>

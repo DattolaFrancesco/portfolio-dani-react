@@ -129,7 +129,7 @@ a {
   white-space: nowrap;
   margin-right: 1rem;
   font-size: 4rem !important;
-  letter-spacing: -6px;
+  letter-spacing: -4px;
   font-weight: 700;
   color: rgb(232, 37, 41);
 }
@@ -409,6 +409,13 @@ li {
 }
 .mb-custom-last-work {
   margin-bottom: 15vh;
+}
+#container-works::-webkit-scrollbar {
+  display: none;
+}
+#container-works {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 /* media query  */
 @media screen and (min-width: 480px) {
