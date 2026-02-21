@@ -80,7 +80,7 @@ const Works = () => {
                 <div className="container">
                   <section className="mt-5">
                     <h2>{h2S[i]}</h2>
-                    <p>{descriptions[i]}</p>
+                    <p className="p-works">{descriptions[i]}</p>
                   </section>
                 </div>
                 <div id={titles[i]} className="carousel slide">

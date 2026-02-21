@@ -25,17 +25,14 @@ img {
   -webkit-touch-callout: none;
 }
 
-p,
-a,
 h1,
-h2,
 h3,
 h4,
 div,
 input,
 button {
   font:
-    var(--fs-xs) mattone,
+    var(--fs-xm) mattone,
     Arial,
     sans-serif;
   text-decoration: none;
@@ -46,6 +43,11 @@ h2 {
   line-height: 1;
 }
 p {
+  font-size: var(--fs-xs);
+  letter-spacing: 0px;
+  line-height: 1;
+}
+.p-works {
   font-size: var(--fs-xxs);
   letter-spacing: 0px;
   line-height: 1;
@@ -108,7 +110,7 @@ a {
 }
 .marquee {
   position: absolute;
-  bottom: 2%;
+  bottom: -4%;
   width: 100%;
   overflow: hidden;
 }
@@ -301,10 +303,10 @@ li {
   gap: 5rem;
 }
 .w-custom-info-cell {
-  width: 60%;
+  width: 70vw;
 }
 .w-custom-info-cell-desktop {
-  width: 45%;
+  width: 55vw;
 }
 .custom-tv-size {
   top: 9%;
@@ -455,7 +457,7 @@ li {
     top: -5vh;
   }
   .w-custom-info-cell {
-    width: 50%;
+    width: 50vw;
   }
 
   .custom-push {
@@ -565,7 +567,7 @@ li {
     max-height: 30rem;
   }
   .w-custom-info-cell {
-    width: 35%;
+    width: 40vw;
   }
   .gap-custom-info {
     gap: 0;
@@ -582,7 +584,10 @@ li {
 }
 @media screen and (min-width: 1200px) {
   .w-custom-info-cell-desktop {
-    width: 30%;
+    width: 40vw;
+  }
+  .p-info {
+    font-size: var(--fs-s);
   }
 }
 
