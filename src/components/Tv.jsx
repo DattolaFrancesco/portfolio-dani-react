@@ -60,7 +60,7 @@ const Tv = () => {
   }, [location]);
 
   return (
-    <section id="tv" className="size-custom position-relative">
+    <section id="tv" className="size-custom position-relative testAnimation">
       <img src="tv/Tvnobtn.webp" alt="tv" loading="lazy" decoding="async" draggable="false" className="size-custom" />
 
       <div className="position-absolute custom-tv-size overflow-hidden">

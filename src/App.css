@@ -419,6 +419,9 @@ li {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+.testAnimation {
+  animation: moveTv 2s ease forwards;
+}
 /* media query  */
 @media screen and (min-width: 480px) {
   header,
@@ -620,6 +623,14 @@ li {
   }
   to {
     transform: translateX(0);
+  }
+}
+@keyframes moveTv {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
   }
 }
 /* @keyframes moveUl {
