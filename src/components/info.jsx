@@ -58,7 +58,7 @@ const Info = (props) => {
                   <p className="m-0 ">elsolito010@gmail.com</p>
                 </a>
                 <a href="https://www.instagram.com/_.elsolito._?igsh=czZwYzB0NTNxaWtp&utm_source=qr" className="text-black text-decoration-none">
-                  <p className="m-0 ">instagram account</p>
+                  <p className="m-0 ">instagram</p>
                 </a>
               </Col>
               <Col xs={12} className="d-flex justify-content-end" style={{ zIndex: "999" }}>
