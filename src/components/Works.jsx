@@ -32,10 +32,10 @@ const Works = () => {
   const titles = ["QUEIO", "CHARACTER", "Lettering", "Vetrina", "Popup", "Misc"];
   const h2S = ["QUEIO", "CHARACTER DESIGN", "LETTERING", "WINDOW DISPLAYS", "POP-UP", "MISC"];
   const descriptions = [
-    "Visual content and graphic posts created for Queio Store, including Instagram posts and t-shirt garphics.",
+    "Visual content and graphic posts created for Queio Store, including Instagram posts and t-shirt graphics.",
     "Character design explorations focused on expressive shapes and personality.",
     "Explorations lettering, featuring custom alpjhabets, expressive letterforms and experimental sketches.",
-    "Window display designs developed to creare strong visual impact and storytelling for retail spaces...",
+    "Window display designs developed to creare strong visual impact and storytelling for retail spaces.",
     "Live spray painting pop-up event featuring on-site T-shirt customization and an exhibition of original canvases.",
     "Misc random works.",
   ];
