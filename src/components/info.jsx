@@ -21,7 +21,7 @@ const Info = (props) => {
             <a href="tel:+393519804290" className="phone-link">
               <p className="m-0 p-info">+39 351 980 4290</p>
             </a>
-            <a href="mailto:ELSOLITOO10@GMAIL.COM" className="text-black text-decoration-none">
+            <a href="mailto:elsolitoo10@gmail.com" className="text-black text-decoration-none">
               <p className="m-0 p-info">elsolitoo10@gmail.com</p>
             </a>
             <a href="https://www.instagram.com/_.elsolito._?igsh=czZwYzB0NTNxaWtp&utm_source=qr" className="text-black text-decoration-none">
