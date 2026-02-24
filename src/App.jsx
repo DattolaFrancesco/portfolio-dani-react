@@ -4,7 +4,6 @@ import { lazy, Suspense } from "react";
 
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
-import { Spinner } from "react-bootstrap";
 import { useState } from "react";
 const NavBar = lazy(() => import("./components/NavBar"));
 const LandingPage = lazy(() => import("./components/LandingPage"));
