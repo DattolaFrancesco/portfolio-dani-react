@@ -66,11 +66,9 @@ const Tv = () => {
       <div className="position-absolute custom-tv-size overflow-hidden">
         <img id="worksPhoto" src={image} alt="works" draggable="false" className="w-100 h-100" loading="eager" />
 
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        <img
+          src="/imgLanding/blur.gif"
+          alt=""
           className="position-absolute top-0 start-0 w-100 h-100"
           style={{
             objectFit: "cover",
@@ -78,9 +76,7 @@ const Tv = () => {
             opacity: showVideo ? 1 : 0,
             transition: "opacity 0.2s ease-in-out",
           }}
-        >
-          <source src="/imgLanding/blur.mp4" type="video/mp4" />
-        </video>
+        />
       </div>
       <a
         ref={btnUpRef}

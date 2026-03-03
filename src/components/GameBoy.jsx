@@ -64,12 +64,9 @@ const GameBoy = () => {
       <img id="worksDisplayer" src="imgLanding/GAMEBOYOFFICIAL.webp" alt="gameboy" decoding="async" draggable="false" className="size-custom" />
       <div className="position-absolute custom-gameboy-size overflow-hidden">
         <img id="worksPhoto" src={image} alt="works" loading="lazy" draggable="false" className="w-100 h-100" />
-
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        <img
+          src="/imgLanding/blur.gif"
+          alt=""
           className="position-absolute top-0 start-0 w-100 h-100"
           style={{
             objectFit: "cover",
@@ -77,10 +74,7 @@ const GameBoy = () => {
             opacity: showVideo ? 1 : 0,
             transition: "opacity 0.2s ease-in-out",
           }}
-        >
-          <source src="/imgLanding/blur.webm" type="video/webm" />
-          <source src="/imgLanding/blur.mp4" type="video/mp4" />
-        </video>
+        />
       </div>
       <a
         onClick={(e) => {
